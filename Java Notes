@@ -1,0 +1,240 @@
+
+Java OOPs Concepts
+Object-Oriented Programming
+Advantage of OOPs over Procedure-oriented programming language
+Difference between Object-oriented and Object-based programming language.
+
+In this page, we will learn about the basics of OOPs. 
+Object-Oriented Programming is a paradigm that provides many concepts such as inheritance, data binding, polymorphism, etc.
+
+The popular object-oriented languages are Java, C#, PHP, Python, C++, etc.
+
+The main aim of object-oriented programming is to implement real-world entities for example object, classes, abstraction, inheritance, polymorphism, etc.
+
+OOPs (Object-Oriented Programming System)
+Object means a real-world entity such as a pen, chair, table, computer, watch, etc. 
+Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects. 
+It simplifies the software development and maintenance by providing some concepts:
+
+Object
+Class
+Inheritance
+Polymorphism
+Abstraction
+Encapsulation
+
+
+Object
+Any entity that has state and behavior is known as an object. For example a chair, pen, table, keyboard, bike, etc. It can be physical or logical.
+An Object can be defined as an instance of a class. 
+An object contains an address and takes up some space in memory. Objects can communicate without knowing the details of each other's data or code. 
+The only necessary thing is the type of message accepted and the type of response returned by the objects.
+
+Example: A dog is an object because it has states like color, name, breed, etc. as well as behaviors like wagging the tail, barking, eating, etc
+
+
+Class
+A class is defined as a blueprint from which you can create an individual object. 
+Class doesn't consume any space.
+
+
+Inheritance
+When one object acquires all the properties and behaviors of a parent object, it is known as inheritance.
+It provides code reusability. 
+It is used to achieve runtime polymorphism.
+
+Polymorphism
+
+If one task is performed by different ways, it is known as polymorphism. 
+For example: to convince the customer differently, to draw something, for example shape: triangle, rectangle, etc.
+Payment method : Debit , UPI , Paytm etc.
+
+
+Abstraction
+Hiding internal details and showing functionality is known as abstraction. For example phone call, we don't know the internal processing.
+
+In Java, we use abstract class and interface to achieve abstraction.
+
+
+
+Encapsulation
+Binding (or wrapping) code and data together into a single unit are known as encapsulation. 
+For example capsule, it is wrapped with different medicines.
+
+A Java class is the example of encapsulation. Java bean is the fully encapsulated class because all the data members are private here.
+
+
+
+Advantage of OOPs over Procedure-oriented programming language
+1) OOPs makes development and maintenance easier whereas in a procedure-oriented programming language it is not easy to manage if code grows as project size increases.
+
+2) OOPs provides data hiding whereas in a procedure-oriented programming language a global data can be accessed from anywhere.
+
+3) OOPs provides the ability to simulate real-world event much more effectively. We can provide the solution of real word problem if we are using the Object-Oriented Programming language.
+
+What is the difference between an object-oriented programming language and object-based programming language?
+Object-based programming language follows all the features of OOPs except Inheritance. 
+JavaScript and VBScript are examples of object-based programming languages.
+
+
+
+Do You Know?
+Can we overload the main method?
+A Java Constructor returns a value but, what?
+Can we create a program without main method?
+What are the six ways to use this keyword?
+Why is multiple inheritance not supported in Java?
+Why use aggregation?
+Can we override the static method?
+What is covariant return type?
+What are the three usages of Java super keyword?
+Why use instance initializer block?
+What is the usage of a blank final variable?
+What is a marker or tagged interface?
+What is runtime polymorphism or dynamic method dispatch?
+What is the difference between static and dynamic binding?
+How downcasting is possible in Java?
+What is the purpose of a private constructor?
+What is object cloning?
+
+
+What will we learn in OOPs Concepts?
+Advantage of OOPs
+Naming Convention
+Object and class
+Method overloading
+Constructor
+static keyword
+this keyword with six usage
+Inheritance
+Aggregation
+Method Overriding
+Covariant Return Type
+super keyword
+Instance Initializer block
+final keyword
+Abstract class
+Interface
+Runtime Polymorphism
+Static and Dynamic Binding
+Downcasting with instanceof operator
+Package
+Access Modifiers
+Encapsulation
+Object Cloning
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------
+
+
+Java Naming conventions
+Java naming convention is a rule to follow as you decide what to name your identifiers such as class, package, variable, constant, method etc.
+
+But, it is not forced to follow. So, it is known as convention not rule.
+
+All the classes, interfaces, packages, methods and fields of java programming language are given according to java naming convention.
+
+Advantage of naming conventions in java
+By using standard Java naming conventions, you make your code easier to read for yourself and for other programmers. 
+Readability of Java program is very important. It indicates that less time is spent to figure out what the code does.
+
+
+class name			should start with uppercase letter and be a noun e.g. String, Color, Button, System, Thread etc.
+interface name		should start with uppercase letter and be an adjective e.g. Runnable, Remote, ActionListener etc.
+method name			should start with lowercase letter and be a verb e.g. actionPerformed(), main(), print(), println() etc.
+variable name		should start with lowercase letter e.g. firstName, orderNumber etc.
+package name		should be in lowercase letter e.g. java, lang, sql, util etc.
+constants name		should be in uppercase letter. e.g. RED, YELLOW, MAX_PRIORITY etc.
+
+
+//--------------------------------------------------------------------------------------------------------------------------
+
+
+
+Objects and Classes in Java
+
+In object-oriented programming technique, we design a program using objects and classes.
+
+An object in Java is the physical as well as logical entity whereas a class in Java is a logical entity only.
+
+
+What is an object in Java
+
+An entity that has state and behavior is known as an object
+ e.g. chair, bike, marker, pen, table, car etc. It can be physical or logical (tangible and intangible). 
+ The example of an intangible object is the banking system.
+ 
+An object has three characteristics:
+
+State: represents the data (value) of an object.
+Behavior: represents the behavior (functionality) of an object such as deposit, withdraw, etc.
+Identity: An object identity is typically implemented via a unique ID. The value of the ID is not visible to the external user. 
+However, it is used internally by the JVM to identify each object uniquely.
+
+
+For Example, Pen is an object. Its name is Reynolds; color is white, known as its state. It is used to write, so writing is its behavior.
+
+An object is an instance of a class. A class is a template or blueprint from which objects are created. So, an object is the instance(result) of a class.
+
+Object Definitions:
+
+An object is a real-world entity.
+An object is a runtime entity.
+The object is an entity which has state and behavior.
+The object is an instance of a class.
+
+
+What is a class in Java
+
+It is a template or blueprint from which objects are created. It is a logical entity. It can't be physical.
+
+A class in Java can contain:
+
+Fields
+Methods
+Constructors
+Blocks
+Nested class and interface
+
+
+
+Syntax to declare a class:
+class <class_name>{  
+    field;  
+    method;  
+}  
+
+
+Instance variable in Java
+A variable which is created inside the class but outside the method is known as an instance variable. Instance variable doesn't get memory at compile time.
+ It gets memory at runtime when an object or instance is created. That is why it is known as an instance variable.
+ 
+ 
+ 
+ Method in Java
+In Java, a method is like a function which is used to expose the behavior of an object.
+
+Advantage of Method
+Code Reusability
+Code Optimization
+
+
+What is the difference between function and method in java?
+	
+	—Function are self contained program they have return some values and the functions are defined in structured languages like Pascal,C.
+
+	—Functions are called independently.
+
+	While methods are those do not have independent existence they are always defined with in class.	
+	Ex:- main() method in java Language that is defined with in a class.
+
+	Methods are called using instance or object.
+
+	Methods are used to manipulate instance variable of a class.
+	
+	
+new keyword in Java
+	The new keyword is used to allocate memory at runtime. All objects get memory in Heap memory area.
+
