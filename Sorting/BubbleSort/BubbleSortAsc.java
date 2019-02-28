@@ -25,7 +25,7 @@ public class BubbleSortAsc {
 	
 	public static void main(String[] args)
 	{
-		int[] arr = {1,8,3,4,7,2};
+		int[] arr = {1,8,3,4,7,8,2,10};
 		
 		System.out.println( " Array Before Sorting ");
 
