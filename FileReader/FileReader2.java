@@ -18,7 +18,7 @@ public class FileReader2 {
 		Scanner scanner = new Scanner(new File(csvFile));
 		scanner.useDelimiter("\\n");
 		String st= null;
-		ArrayList<ArrayList<?>> record = new ArrayList<ArrayList<?>>();
+		ArrayList<ArrayList<String>> record = new ArrayList<ArrayList<String>>();
 		
 		while( scanner.hasNext() )
 		{
@@ -28,7 +28,11 @@ public class FileReader2 {
 				
 
 		findDuplicates( record);
+		findNull(record);
+		
 		scanner.close();
+		
+		
 		 
 	     
 	}
@@ -37,6 +41,7 @@ public class FileReader2 {
 	
 	public static ArrayList<String> splitCell(String st )
 	{
+		
 		String delimiter = ",";
 		String[] srr = st.split(delimiter);
 		ArrayList<String>  arr = new ArrayList<String>();
@@ -56,11 +61,12 @@ public class FileReader2 {
 		return arr;
 	}
 	
-	public static void findDuplicates(ArrayList<ArrayList<?>> record)
+	
+	
+	public static void findDuplicates( ArrayList<ArrayList<String>> record )
 	{
 	
-		System.out.println();
-		
+		System.out.println( " Removing Duplicates");	
 		Object st = null;
 		
 		for(int i=0; i<=record.size()-1; i++)
@@ -91,11 +97,8 @@ public class FileReader2 {
 					}									
 					i2++;
 				}
-				
-			
 			}
-			System.out.println( );
-			
+			System.out.println( );	
 		}
 		
 	
@@ -106,5 +109,38 @@ public class FileReader2 {
 		
 		
 	}
+	
+	
+	
+	public static void findNull( ArrayList<ArrayList<String>> record )
+	{
+		
+		System.out.println( "  Finding Null");		
+		Object st = null;
+		int count = 0;
+		for(int i=0; i<=record.size()-1; i++)
+		{
+	
+			for(int j=0; j<=record.get(i).size()-1; j++)
+			{ 
+				System.out.println( record.get(i).get(j)  +" "+ record.get(i).get(j).equals(null)  ); 
+						
+			}
+			System.out.println( );	
+		}
+		
+	/*
+		for(ArrayList<?> s  : record)
+		{
+			System.out.println(s);
+		}
+		*/
+
+	}
+	
+	
 
 }
+
+
+
