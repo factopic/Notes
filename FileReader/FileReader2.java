@@ -123,8 +123,13 @@ public class FileReader2 {
 	
 			for(int j=0; j<=record.get(i).size()-1; j++)
 			{ 
-				System.out.println( record.get(i).get(j)  +" "+ record.get(i).get(j).equals(null)  ); 
-						
+				//System.out.println( record.get(i).get(j)  +" "+ record.get(i).get(j).equals(" ") ); 
+				
+				if( record.get(i).get(j).equals(" ")  )
+				{
+					System.out.println( record.get(i));
+				}
+				
 			}
 			System.out.println( );	
 		}
