@@ -13,7 +13,7 @@ public class PrintWriterEx2 {
 		String  str = "Hello Pavan"
 				+ "This message is from Java Program"
 				+ "How are you!"
-				+ "				Thank you....."
+				+ "			Thank you....."
 				+ "Random"
 				;
 		pw.write(str);
