@@ -10,13 +10,18 @@ import java.util.Scanner;
 
 public class FileReader1 
 {
+	/*
+	
+	Next convert csv to table
+	
+	*/
 	//Delimiter used in CSV file
 	final static String  DELIMITER = ",";
 	
 	
 	public static void main(String[] args) 
 	{
-		// file which need to be parse
+		// file which need to be parse 
 		String fileToParse = "src\\FileReader\\SampleCSVFile.csv";
 		BufferedReader fileReader = null;
 		
