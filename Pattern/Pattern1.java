@@ -7,15 +7,15 @@ public class Pattern1
 	public static void main(String[] args) throws InterruptedException
 	{
 		System.out.println(" ** Printing Pattern ** ");
-		
-		for(int i=1; i<=5; i++)
+		int n =5;
+		for(int i=1; i<=n; i++)
 		{
 			for(int j=1; j<i; j++)
 			{
 				System.out.print(" ");
 			}
 			int m= 1;
-			for(int k=0; k<=5-i; k++)
+			for(int k=0; k<=n-i; k++)
 			{
 				System.out.print(m++);   //System.out.print(m++ +" ");
 				
