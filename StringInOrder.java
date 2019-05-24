@@ -11,14 +11,8 @@ public class StringInOrder
 		
 	      int size = st.length;
 
-	      for(int i = 0; i<size-1; i++) {
-	         for (int j = i+1; j<st.length; j++) {
-	            if(st[i].compareTo(st[j])>0) {
-	               String temp = st[i];
-	               st[i] = st[j];
-	               st[j] = temp;
-	            }
-	         }
-	      }
+	      	      int size = st.length;
+	      Arrays.sort(st );
+	      System.out.println( Arrays.toString(st)  );
 	}
 }
