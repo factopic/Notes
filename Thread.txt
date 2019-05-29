@@ -814,3 +814,11 @@ Garbage Collection
 Runtime class
 Multithreading quiz-1
 Multithreading quiz-2
+
+
+
+
+
+
+
+Servlets are very important topic of Java EE and all of the web applications framework such as Spring and Struts are built on top of it. This makes servlet interview questions a hot topic in interviews.
