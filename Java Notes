@@ -258,3 +258,8 @@ A thread is a lightweight sub-process, the smallest unit of processing. Multipro
 However, we use multithreading than multiprocessing because threads use a shared memory area. They don't allocate separate memory area so saves memory, and context-switching between the threads takes less time than process.
 
 Java Multithreading is mostly used in games, animation, etc.
+
+
+
+
+Advertisements. Cookies are text files stored on the client computer and they are kept for various information tracking purpose. Java Servlets transparently supports HTTP cookies. There are three steps involved in identifying returning users − Server script sends a set of cookies to the browser.
