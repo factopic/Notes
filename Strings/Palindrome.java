@@ -11,14 +11,14 @@ public class Palindrome
 		
 		System.out.println( st1 == st2);
 		
-		checkPalindrome( st1 , st2 ) ;
+		isPalindrome( st1 , st2 ) ;
 	
 		
 	}
 	
-	static void checkPalindrome(String st1 , String st2 )
+	static void isPalindrome(String st1 , String st2 )
 	{
-		if ( st1 == st2 )
+		if ( st1.equals(st2) )
 			System.out.println( " It is a Palindrome ");
 		else 
 			System.out.println( " It is not a Palindrome ");
