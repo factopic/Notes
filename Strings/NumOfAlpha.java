@@ -6,7 +6,8 @@ public class NumOfAlpha
 		{
 			String st1 = "array";
 			System.out.println( ) ;
-			
-			
+			char[] Ch = toCharArray();
+                        int a = CharAt();
+			System.out.println( a);
 		}
 }
