@@ -32,7 +32,7 @@ public class FileReader2 {
 		
 		scanner.close();
 		
-		
+		// scanner class is costly resource
 		 
 	     
 	}
