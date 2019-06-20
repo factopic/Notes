@@ -13,7 +13,7 @@ public class DayDate
 		String dd="05";
 		String MM="05";
 		String yyyy="1963";
-		
+		String xxx;
 		String inputDateStr = String.format("%s/%s/%s", dd, MM ,yyyy);
 		System.out.println( inputDateStr );
 		java.util.Date inputDate = new SimpleDateFormat("ddd/MM/yyyy").parse(inputDateStr);
