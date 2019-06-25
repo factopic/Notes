@@ -560,6 +560,1120 @@ Advantages of static variable
 It makes your program memory efficient (i.e., it saves memory).
 
 
+Understanding the problem without static variable
+class Student{  
+     int rollno;  
+     String name;  
+     String college="ITS";  
+}  
+Suppose there are 500 students in my college, now all instance data members will get memory each time when the object is created. 
+All students have its unique rollno and name, so instance data member is good in such case. Here, "college" refers to the common property of all objects. If we make it static, this field will get the memory only once.
+
+
+Java static property is shared to all objects.
+Example of static variable
+//Java Program to demonstrate the use of static variable  
+class Student{  
+   int rollno;//instance variable  
+   String name;  
+   static String college ="ITS";//static variable  
+   //constructor  
+   Student(int r, String n){  
+   rollno = r;  
+   name = n;  
+   }  
+   //method to display the values  
+   void display (){System.out.println(rollno+" "+name+" "+college);}  
+}  
+//Test class to show the values of objects  
+public class TestStaticVariable1{  
+ public static void main(String args[]){  
+ Student s1 = new Student(111,"Karan");  
+ Student s2 = new Student(222,"Aryan");  
+ //we can change the college of all objects by the single line of code  
+ //Student.college="BBDIT";  
+ s1.display();  
+ s2.display();  
+ }  
+}  
+
+
+
+Output:
+
+111 Karan ITS
+222 Aryan ITS
+
+
+
+
+
+Program of the counter without static variable
+In this example, we have created an instance variable named count which is incremented in the constructor. Since instance variable gets the memory at the time of object creation, each object will have the copy of the instance variable. If it is incremented, it won't reflect other objects. So each object will have the value 1 in the count variable.
+
+//Java Program to demonstrate the use of an instance variable  
+//which get memory each time when we create an object of the class.  
+class Counter{  
+int count=0;//will get memory each time when the instance is created  
+  
+Counter(){  
+count++;//incrementing value  
+System.out.println(count);  
+}  
+  
+public static void main(String args[]){  
+//Creating objects  
+Counter c1=new Counter();  
+Counter c2=new Counter();  
+Counter c3=new Counter();  
+}  
+}  
+Test it Now
+Output:
+
+1
+1
+1
+Program of counter by static variable
+As we have mentioned above, static variable will get the memory only once, if any object changes the value of the static variable, it will retain its value.
+
+//Java Program to illustrate the use of static variable which  
+//is shared with all objects.  
+class Counter2{  
+static int count=0;//will get memory only once and retain its value  
+  
+Counter2(){  
+count++;//incrementing the value of static variable  
+System.out.println(count);  
+}  
+  
+public static void main(String args[]){  
+//creating objects  
+Counter2 c1=new Counter2();  
+Counter2 c2=new Counter2();  
+Counter2 c3=new Counter2();  
+}  
+}  
+Test it Now
+Output:
+
+1
+2
+3
+2) Java static method
+If you apply static keyword with any method, it is known as static method.
+
+A static method belongs to the class rather than the object of a class.
+A static method can be invoked without the need for creating an instance of a class.
+A static method can access static data member and can change the value of it.
+Example of static method
+//Java Program to demonstrate the use of a static method.  
+class Student{  
+     int rollno;  
+     String name;  
+     static String college = "ITS";  
+     //static method to change the value of static variable  
+     static void change(){  
+     college = "BBDIT";  
+     }  
+     //constructor to initialize the variable  
+     Student(int r, String n){  
+     rollno = r;  
+     name = n;  
+     }  
+     //method to display values  
+     void display(){System.out.println(rollno+" "+name+" "+college);}  
+}  
+//Test class to create and display the values of object  
+public class TestStaticMethod{  
+    public static void main(String args[]){  
+    Student.change();//calling change method  
+    //creating objects  
+    Student s1 = new Student(111,"Karan");  
+    Student s2 = new Student(222,"Aryan");  
+    Student s3 = new Student(333,"Sonoo");  
+    //calling display method  
+    s1.display();  
+    s2.display();  
+    s3.display();  
+    }  
+}  
+Test it Now
+Output:111 Karan BBDIT
+       222 Aryan BBDIT
+       333 Sonoo BBDIT
+Another example of a static method that performs a normal calculation
+//Java Program to get the cube of a given number using the static method  
+  
+class Calculate{  
+  static int cube(int x){  
+  return x*x*x;  
+  }  
+  
+  public static void main(String args[]){  
+  int result=Calculate.cube(5);  
+  System.out.println(result);  
+  }  
+}  
+Test it Now
+Output:125
+Restrictions for the static method
+There are two main restrictions for the static method. They are:
+
+The static method can not use non static data member or call non-static method directly.
+this and super cannot be used in static context.
+class A{  
+ int a=40;//non static  
+   
+ public static void main(String args[]){  
+  System.out.println(a);  
+ }  
+}        
+Test it Now
+Output:Compile Time Error
+Q) Why is the Java main method static?
+Ans) It is because the object is not required to call a static method. If it were a non-static method, JVM creates an object first then call main() method that will lead the problem of extra memory allocation.
+
+3) Java static block
+Is used to initialize the static data member.
+It is executed before the main method at the time of classloading.
+Example of static block
+class A2{  
+  static{System.out.println("static block is invoked");}  
+  public static void main(String args[]){  
+   System.out.println("Hello main");  
+  }  
+}  
+Test it Now
+Output:static block is invoked
+       Hello main
+Q) Can we execute a program without main() method?
+Ans) No, one of the ways was the static block, but it was possible till JDK 1.6. Since JDK 1.7, it is not possible to execute a java class without the main method.
+
+class A3{  
+  static{  
+  System.out.println("static block is invoked");  
+  System.exit(0);  
+  }  
+}  
+Test it Now
+Output:
+
+static block is invoked
+Since JDK 1.7 and above, output would be:
+
+Error: Main method not found in class A3, please define the main method as:
+   public static void main(String[] args)
+or a JavaFX application class must extend javafx.application.Application
+
+Next Topicthis keyword in java
+
+
+
+
+
+
+this keyword in java
+There can be a lot of usage of java this keyword. In java, this is a reference variable that refers to the current object.
+
+java this keyword
+Usage of java this keyword
+Here is given the 6 usage of java this keyword.
+
+this can be used to refer current class instance variable.
+this can be used to invoke current class method (implicitly)
+this() can be used to invoke current class constructor.
+this can be passed as an argument in the method call.
+this can be passed as argument in the constructor call.
+this can be used to return the current class instance from the method.
+Suggestion: If you are beginner to java, lookup only three usage of this keyword.
+
+
+
+
+
+1) this: to refer current class instance variable
+The this keyword can be used to refer current class instance variable. If there is ambiguity between the instance variables and parameters, this keyword resolves the problem of ambiguity.
+
+Understanding the problem without this keyword
+Let's understand the problem if we don't use this keyword by the example given below:
+class Student{  
+int rollno;  
+String name;  
+float fee;  
+Student(int rollno,String name,float fee){  
+rollno=rollno;  
+name=name;  
+fee=fee;  
+}  
+void display(){System.out.println(rollno+" "+name+" "+fee);}  
+}  
+class TestThis1{  
+public static void main(String args[]){  
+Student s1=new Student(111,"ankit",5000f);  
+Student s2=new Student(112,"sumit",6000f);  
+s1.display();  
+s2.display();  
+}}  
+Test it Now
+Output:
+
+0 null 0.0
+0 null 0.0
+In the above example, parameters (formal arguments) and instance variables are same. So, we are using this keyword to distinguish local variable and instance variable.
+
+Solution of the above problem by this keyword
+class Student{  
+int rollno;  
+String name;  
+float fee;  
+Student(int rollno,String name,float fee){  
+this.rollno=rollno;  
+this.name=name;  
+this.fee=fee;  
+}  
+void display(){System.out.println(rollno+" "+name+" "+fee);}  
+}  
+  
+class TestThis2{  
+public static void main(String args[]){  
+Student s1=new Student(111,"ankit",5000f);  
+Student s2=new Student(112,"sumit",6000f);  
+s1.display();  
+s2.display();  
+}}  
+Test it Now
+Output:
+
+111 ankit 5000
+112 sumit 6000
+If local variables(formal arguments) and instance variables are different, there is no need to use this keyword like in the following program:
+
+Program where this keyword is not required
+class Student{  
+int rollno;  
+String name;  
+float fee;  
+Student(int r,String n,float f){  
+rollno=r;  
+name=n;  
+fee=f;  
+}  
+void display(){System.out.println(rollno+" "+name+" "+fee);}  
+}  
+  
+class TestThis3{  
+public static void main(String args[]){  
+Student s1=new Student(111,"ankit",5000f);  
+Student s2=new Student(112,"sumit",6000f);  
+s1.display();  
+s2.display();  
+}}  
+Test it Now
+Output:
+
+111 ankit 5000
+112 sumit 6000
+It is better approach to use meaningful names for variables. So we use same name for instance variables and parameters in real time, and always use this keyword.
+2) this: to invoke current class method
+You may invoke the method of the current class by using the this keyword. If you don't use the this keyword, compiler automatically adds this keyword while invoking the method. Let's see the example
+
+this keyword
+class A{  
+void m(){System.out.println("hello m");}  
+void n(){  
+System.out.println("hello n");  
+//m();//same as this.m()  
+this.m();  
+}  
+}  
+class TestThis4{  
+public static void main(String args[]){  
+A a=new A();  
+a.n();  
+}}  
+Test it Now
+Output:
+
+hello n
+hello m
+3) this() : to invoke current class constructor
+The this() constructor call can be used to invoke the current class constructor. It is used to reuse the constructor. In other words, it is used for constructor chaining.
+
+Calling default constructor from parameterized constructor:
+
+class A{  
+A(){System.out.println("hello a");}  
+A(int x){  
+this();  
+System.out.println(x);  
+}  
+}  
+class TestThis5{  
+public static void main(String args[]){  
+A a=new A(10);  
+}}  
+Test it Now
+Output:
+
+hello a
+10
+Calling parameterized constructor from default constructor:
+
+class A{  
+A(){  
+this(5);  
+System.out.println("hello a");  
+}  
+A(int x){  
+System.out.println(x);  
+}  
+}  
+class TestThis6{  
+public static void main(String args[]){  
+A a=new A();  
+}}  
+Test it Now
+Output:
+
+5
+hello a
+Real usage of this() constructor call
+The this() constructor call should be used to reuse the constructor from the constructor. It maintains the chain between the constructors i.e. it is used for constructor chaining. Let's see the example given below that displays the actual use of this keyword.
+
+class Student{  
+int rollno;  
+String name,course;  
+float fee;  
+Student(int rollno,String name,String course){  
+this.rollno=rollno;  
+this.name=name;  
+this.course=course;  
+}  
+Student(int rollno,String name,String course,float fee){  
+this(rollno,name,course);//reusing constructor  
+this.fee=fee;  
+}  
+void display(){System.out.println(rollno+" "+name+" "+course+" "+fee);}  
+}  
+class TestThis7{  
+public static void main(String args[]){  
+Student s1=new Student(111,"ankit","java");  
+Student s2=new Student(112,"sumit","java",6000f);  
+s1.display();  
+s2.display();  
+}}  
+Test it Now
+Output:
+
+111 ankit java null
+112 sumit java 6000
+Rule: Call to this() must be the first statement in constructor.
+class Student{  
+int rollno;  
+String name,course;  
+float fee;  
+Student(int rollno,String name,String course){  
+this.rollno=rollno;  
+this.name=name;  
+this.course=course;  
+}  
+Student(int rollno,String name,String course,float fee){  
+this.fee=fee;  
+this(rollno,name,course);//C.T.Error  
+}  
+void display(){System.out.println(rollno+" "+name+" "+course+" "+fee);}  
+}  
+class TestThis8{  
+public static void main(String args[]){  
+Student s1=new Student(111,"ankit","java");  
+Student s2=new Student(112,"sumit","java",6000f);  
+s1.display();  
+s2.display();  
+}}  
+Test it Now
+Compile Time Error: Call to this must be first statement in constructor
+4) this: to pass as an argument in the method
+The this keyword can also be passed as an argument in the method. It is mainly used in the event handling. Let's see the example:
+
+class S2{  
+  void m(S2 obj){  
+  System.out.println("method is invoked");  
+  }  
+  void p(){  
+  m(this);  
+  }  
+  public static void main(String args[]){  
+  S2 s1 = new S2();  
+  s1.p();  
+  }  
+}  
+Test it Now
+Output:
+
+method is invoked
+Application of this that can be passed as an argument:
+In event handling (or) in a situation where we have to provide reference of a class to another one. It is used to reuse one object in many methods.
+
+5) this: to pass as argument in the constructor call
+We can pass the this keyword in the constructor also. It is useful if we have to use one object in multiple classes. Let's see the example:
+
+class B{  
+  A4 obj;  
+  B(A4 obj){  
+    this.obj=obj;  
+  }  
+  void display(){  
+    System.out.println(obj.data);//using data member of A4 class  
+  }  
+}  
+  
+class A4{  
+  int data=10;  
+  A4(){  
+   B b=new B(this);  
+   b.display();  
+  }  
+  public static void main(String args[]){  
+   A4 a=new A4();  
+  }  
+}  
+Test it Now
+Output:10
+6) this keyword can be used to return current class instance
+We can return this keyword as an statement from the method. In such case, return type of the method must be the class type (non-primitive). Let's see the example:
+
+Syntax of this that can be returned as a statement
+return_type method_name(){  
+return this;  
+}  
+Example of this keyword that you return as a statement from the method
+class A{  
+A getA(){  
+return this;  
+}  
+void msg(){System.out.println("Hello java");}  
+}  
+class Test1{  
+public static void main(String args[]){  
+new A().getA().msg();  
+}  
+}  
+Test it Now
+Output:
+
+Hello java
+Proving this keyword
+Let's prove that this keyword refers to the current class instance variable. In this program, we are printing the reference variable and this, output of both variables are same.
+class A5{  
+void m(){  
+System.out.println(this);//prints same reference ID  
+}  
+public static void main(String args[]){  
+A5 obj=new A5();  
+System.out.println(obj);//prints the reference ID  
+obj.m();  
+}  
+}  
+Test it Now
+Output:
+
+A5@22b3ea59
+A5@22b3ea59
+Next TopicInheritance in java
+
+
+
+
+Inheritance in Java
+Inheritance
+Types of Inheritance
+Why multiple inheritance is not possible in Java in case of class?
+Inheritance in Java is a mechanism in which one object acquires all the properties and behaviors of a parent object. It is an important part of OOPs (Object Oriented programming system).
+
+The idea behind inheritance in Java is that you can create new classes that are built upon existing classes. When you inherit from an existing class, you can reuse methods and fields of the parent class. Moreover, you can add new methods and fields in your current class also.
+
+Inheritance represents the IS-A relationship which is also known as a parent-child relationship.
+
+Why use inheritance in java
+For Method Overriding (so runtime polymorphism can be achieved).
+For Code Reusability.
+Terms used in Inheritance
+Class: A class is a group of objects which have common properties. It is a template or blueprint from which objects are created.
+Sub Class/Child Class: Subclass is a class which inherits the other class. It is also called a derived class, extended class, or child class.
+Super Class/Parent Class: Superclass is the class from where a subclass inherits the features. It is also called a base class or a parent class.
+Reusability: As the name specifies, reusability is a mechanism which facilitates you to reuse the fields and methods of the existing class when you create a new class. You can use the same fields and methods already defined in the previous class.
+The syntax of Java Inheritance
+class Subclass-name extends Superclass-name  
+{  
+   //methods and fields  
+}  
+The extends keyword indicates that you are making a new class that derives from an existing class. The meaning of "extends" is to increase the functionality.
+
+In the terminology of Java, a class which is inherited is called a parent or superclass, and the new class is called child or subclass.
+
+
+ 
+Java Inheritance Example
+Inheritance in Java
+As displayed in the above figure, Programmer is the subclass and Employee is the superclass. The relationship between the two classes is Programmer IS-A Employee. It means that Programmer is a type of Employee.
+
+class Employee{  
+ float salary=40000;  
+}  
+class Programmer extends Employee{  
+ int bonus=10000;  
+ public static void main(String args[]){  
+   Programmer p=new Programmer();  
+   System.out.println("Programmer salary is:"+p.salary);  
+   System.out.println("Bonus of Programmer is:"+p.bonus);  
+}  
+}  
+Test it Now
+ Programmer salary is:40000.0
+ Bonus of programmer is:10000
+In the above example, Programmer object can access the field of own class as well as of Employee class i.e. code reusability.
+
+Types of inheritance in java
+
+ 
+On the basis of class, there can be three types of inheritance in java: single, multilevel and hierarchical.
+
+In java programming, multiple and hybrid inheritance is supported through interface only. We will learn about interfaces later.
+
+Types of inheritance in Java
+Note: Multiple inheritance is not supported in Java through class.
+When one class inherits multiple classes, it is known as multiple inheritance. For Example:
+
+Multiple inheritance in Java
+Single Inheritance Example
+File: TestInheritance.java
+
+class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class TestInheritance{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+d.bark();  
+d.eat();  
+}}  
+Output:
+
+barking...
+eating...
+Multilevel Inheritance Example
+File: TestInheritance2.java
+
+class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class BabyDog extends Dog{  
+void weep(){System.out.println("weeping...");}  
+}  
+class TestInheritance2{  
+public static void main(String args[]){  
+BabyDog d=new BabyDog();  
+d.weep();  
+d.bark();  
+d.eat();  
+}}  
+Output:
+
+weeping...
+barking...
+eating...
+
+ 
+Hierarchical Inheritance Example
+File: TestInheritance3.java
+
+class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class Cat extends Animal{  
+void meow(){System.out.println("meowing...");}  
+}  
+class TestInheritance3{  
+public static void main(String args[]){  
+Cat c=new Cat();  
+c.meow();  
+c.eat();  
+//c.bark();//C.T.Error  
+}}  
+Output:
+
+meowing...
+eating...
+Q) Why multiple inheritance is not supported in java?
+To reduce the complexity and simplify the language, multiple inheritance is not supported in java.
+
+Consider a scenario where A, B, and C are three classes. The C class inherits A and B classes. If A and B classes have the same method and you call it from child class object, there will be ambiguity to call the method of A or B class.
+
+Since compile-time errors are better than runtime errors, Java renders compile-time error if you inherit 2 classes. So whether you have same method or different, there will be compile time error.
+
+class A{  
+void msg(){System.out.println("Hello");}  
+}  
+class B{  
+void msg(){System.out.println("Welcome");}  
+}  
+class C extends A,B{//suppose if it were  
+   
+ public static void main(String args[]){  
+   C obj=new C();  
+   obj.msg();//Now which msg() method would be invoked?  
+}  
+}  
+Test it Now
+ Compile Time Error
+Next TopicAggregation in java (HAS-A)
+
+
+
+
+
+
+Aggregation in Java
+If a class have an entity reference, it is known as Aggregation. Aggregation represents HAS-A relationship.
+
+Consider a situation, Employee object contains many informations such as id, name, emailId etc. It contains one more object named address, which contains its own informations such as city, state, country, zipcode etc. as given below.
+
+class Employee{  
+int id;  
+String name;  
+Address address;//Address is a class  
+...  
+}  
+In such case, Employee has an entity reference address, so relationship is Employee HAS-A address.
+
+
+Why use Aggregation?
+For Code Reusability.
+Simple Example of Aggregation
+aggregation example
+In this example, we have created the reference of Operation class in the Circle class.
+
+class Operation{  
+ int square(int n){  
+  return n*n;  
+ }  
+}  
+  
+class Circle{  
+ Operation op;//aggregation  
+ double pi=3.14;  
+    
+ double area(int radius){  
+   op=new Operation();  
+   int rsquare=op.square(radius);//code reusability (i.e. delegates the method call).  
+   return pi*rsquare;  
+ }  
+  
+     
+    
+ public static void main(String args[]){  
+   Circle c=new Circle();  
+   double result=c.area(5);  
+   System.out.println(result);  
+ }  
+}  
+Test it Now
+Output:78.5
+      
+When use Aggregation?
+Code reuse is also best achieved by aggregation when there is no is-a relationship.
+Inheritance should be used only if the relationship is-a is maintained throughout the lifetime of the objects involved; otherwise, aggregation is the best choice.
+Understanding meaningful example of Aggregation
+In this example, Employee has an object of Address, address object contains its own informations such as city, state, country etc. In such case relationship is Employee HAS-A address.
+
+Address.java
+public class Address {  
+String city,state,country;  
+  
+public Address(String city, String state, String country) {  
+    this.city = city;  
+    this.state = state;  
+    this.country = country;  
+}  
+  
+}  
+Emp.java
+public class Emp {  
+int id;  
+String name;  
+Address address;  
+  
+public Emp(int id, String name,Address address) {  
+    this.id = id;  
+    this.name = name;  
+    this.address=address;  
+}  
+  
+void display(){  
+System.out.println(id+" "+name);  
+System.out.println(address.city+" "+address.state+" "+address.country);  
+}  
+  
+public static void main(String[] args) {  
+Address address1=new Address("gzb","UP","india");  
+Address address2=new Address("gno","UP","india");  
+  
+Emp e=new Emp(111,"varun",address1);  
+Emp e2=new Emp(112,"arun",address2);  
+      
+e.display();  
+e2.display();  
+      
+}  
+}  
+Test it Now
+Output:111 varun
+       gzb UP india
+       112 arun
+       gno UP india      
+download this example
+Next TopicMethod Overloading in java
+
+
+
+
+
+
+
+
+Method Overloading in Java
+Different ways to overload the method
+By changing the no. of arguments
+By changing the datatype
+Why method overloading is not possible by changing the return type
+Can we overload the main method
+method overloading with Type Promotion
+If a class has multiple methods having same name but different in parameters, it is known as Method Overloading.
+
+If we have to perform only one operation, having same name of the methods increases the readability of the program.
+
+Suppose you have to perform addition of the given numbers but there can be any number of arguments, if you write the method such as a(int,int) for two parameters, and b(int,int,int) for three parameters then it may be difficult for you as well as other programmers to understand the behavior of the method because its name differs.
+
+
+So, we perform method overloading to figure out the program quickly.
+
+java method overloading
+Advantage of method overloading
+Method overloading increases the readability of the program.
+
+Different ways to overload the method
+There are two ways to overload the method in java
+
+By changing number of arguments
+By changing the data type
+In java, Method Overloading is not possible by changing the return type of the method only.
+
+ 
+1) Method Overloading: changing no. of arguments
+In this example, we have created two methods, first add() method performs addition of two numbers and second add method performs addition of three numbers.
+
+In this example, we are creating static methods so that we don't need to create instance for calling methods.
+
+class Adder{  
+static int add(int a,int b){return a+b;}  
+static int add(int a,int b,int c){return a+b+c;}  
+}  
+class TestOverloading1{  
+public static void main(String[] args){  
+System.out.println(Adder.add(11,11));  
+System.out.println(Adder.add(11,11,11));  
+}}  
+Test it Now
+Output:
+
+22
+33
+
+2) Method Overloading: changing data type of arguments
+In this example, we have created two methods that differs in data type. The first add method receives two integer arguments and second add method receives two double arguments.
+
+class Adder{  
+static int add(int a, int b){return a+b;}  
+static double add(double a, double b){return a+b;}  
+}  
+class TestOverloading2{  
+public static void main(String[] args){  
+System.out.println(Adder.add(11,11));  
+System.out.println(Adder.add(12.3,12.6));  
+}}  
+Test it Now
+Output:
+
+22
+24.9
+Q) Why Method Overloading is not possible by changing the return type of method only?
+In java, method overloading is not possible by changing the return type of the method only because of ambiguity. Let's see how ambiguity may occur:
+
+class Adder{  
+static int add(int a,int b){return a+b;}  
+static double add(int a,int b){return a+b;}  
+}  
+class TestOverloading3{  
+public static void main(String[] args){  
+System.out.println(Adder.add(11,11));//ambiguity  
+}}  
+Test it Now
+Output:
+
+Compile Time Error: method add(int,int) is already defined in class Adder
+System.out.println(Adder.add(11,11)); //Here, how can java determine which sum() method should be called?
+
+Note: Compile Time Error is better than Run Time Error. So, java compiler renders compiler time error if you declare the same method having same parameters.
+Can we overload java main() method?
+Yes, by method overloading. You can have any number of main methods in a class by method overloading. But JVM calls main() method which receives string array as arguments only. Let's see the simple example:
+
+class TestOverloading4{  
+public static void main(String[] args){System.out.println("main with String[]");}  
+public static void main(String args){System.out.println("main with String");}  
+public static void main(){System.out.println("main without args");}  
+}  
+Test it Now
+Output:
+
+main with String[]
+Method Overloading and Type Promotion
+One type is promoted to another implicitly if no matching datatype is found. Let's understand the concept by the figure given below:
+
+Java Method Overloading with Type Promotion
+As displayed in the above diagram, byte can be promoted to short, int, long, float or double. The short datatype can be promoted to int,long,float or double. The char datatype can be promoted to int,long,float or double and so on.
+
+Example of Method Overloading with TypePromotion
+class OverloadingCalculation1{  
+  void sum(int a,long b){System.out.println(a+b);}  
+  void sum(int a,int b,int c){System.out.println(a+b+c);}  
+  
+  public static void main(String args[]){  
+  OverloadingCalculation1 obj=new OverloadingCalculation1();  
+  obj.sum(20,20);//now second int literal will be promoted to long  
+  obj.sum(20,20,20);  
+  
+  }  
+}  
+Test it Now
+Output:40
+       60
+Example of Method Overloading with Type Promotion if matching found
+If there are matching type arguments in the method, type promotion is not performed.
+
+class OverloadingCalculation2{  
+  void sum(int a,int b){System.out.println("int arg method invoked");}  
+  void sum(long a,long b){System.out.println("long arg method invoked");}  
+  
+  public static void main(String args[]){  
+  OverloadingCalculation2 obj=new OverloadingCalculation2();  
+  obj.sum(20,20);//now int arg sum() method gets invoked  
+  }  
+}  
+Test it Now
+Output:int arg method invoked
+Example of Method Overloading with Type Promotion in case of ambiguity
+If there are no matching type arguments in the method, and each method promotes similar number of arguments, there will be ambiguity.
+
+class OverloadingCalculation3{  
+  void sum(int a,long b){System.out.println("a method invoked");}  
+  void sum(long a,int b){System.out.println("b method invoked");}  
+  
+  public static void main(String args[]){  
+  OverloadingCalculation3 obj=new OverloadingCalculation3();  
+  obj.sum(20,20);//now ambiguity  
+  }  
+}  
+Test it Now
+Output:Compile Time Error
+       
+One type is not de-promoted implicitly for example double cannot be depromoted to any type implicitly.
+Next TopicMethod Overriding in java
+
+
+
+
+
+
+
+
+Method Overriding in Java
+Understanding the problem without method overriding
+Can we override the static method
+Method overloading vs. method overriding
+If subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java.
+
+In other words, If a subclass provides the specific implementation of the method that has been declared by one of its parent class, it is known as method overriding.
+
+Usage of Java Method Overriding
+Method overriding is used to provide the specific implementation of a method which is already provided by its superclass.
+Method overriding is used for runtime polymorphism
+Rules for Java Method Overriding
+The method must have the same name as in the parent class
+The method must have the same parameter as in the parent class.
+There must be an IS-A relationship (inheritance).
+Java Rules for Method Overriding 
+
+ 
+Understanding the problem without method overriding
+Let's understand the problem that we may face in the program if we don't use method overriding.
+
+
+//Java Program to demonstrate why we need method overriding  
+//Here, we are calling the method of parent class with child  
+//class object.  
+//Creating a parent class  
+class Vehicle{  
+  void run(){System.out.println("Vehicle is running");}  
+}  
+//Creating a child class  
+class Bike extends Vehicle{  
+  public static void main(String args[]){  
+  //creating an instance of child class  
+  Bike obj = new Bike();  
+  //calling the method with child class instance  
+  obj.run();  
+  }  
+}  
+Test it Now
+Output:
+
+Vehicle is running
+Problem is that I have to provide a specific implementation of run() method in subclass that is why we use method overriding.
+
+Example of method overriding
+In this example, we have defined the run method in the subclass as defined in the parent class but it has some specific implementation. The name and parameter of the method are the same, and there is IS-A relationship between the classes, so there is method overriding.
+
+//Java Program to illustrate the use of Java Method Overriding  
+//Creating a parent class.  
+class Vehicle{  
+  //defining a method  
+  void run(){System.out.println("Vehicle is running");}  
+}  
+//Creating a child class  
+class Bike2 extends Vehicle{  
+  //defining the same method as in the parent class  
+  void run(){System.out.println("Bike is running safely");}  
+  
+  public static void main(String args[]){  
+  Bike2 obj = new Bike2();//creating object  
+  obj.run();//calling method  
+  }  
+}  
+Test it Now
+Output:
+
+Bike is running safely
+A real example of Java Method Overriding
+Consider a scenario where Bank is a class that provides functionality to get the rate of interest. However, the rate of interest varies according to banks. For example, SBI, ICICI and AXIS banks could provide 8%, 7%, and 9% rate of interest.
+
+Java method overriding example of bank
+Java method overriding is mostly used in Runtime Polymorphism which we will learn in next pages.
+//Java Program to demonstrate the real scenario of Java Method Overriding  
+//where three classes are overriding the method of a parent class.  
+//Creating a parent class.  
+class Bank{  
+int getRateOfInterest(){return 0;}  
+}  
+//Creating child classes.  
+class SBI extends Bank{  
+int getRateOfInterest(){return 8;}  
+}  
+  
+class ICICI extends Bank{  
+int getRateOfInterest(){return 7;}  
+}  
+class AXIS extends Bank{  
+int getRateOfInterest(){return 9;}  
+}  
+//Test class to create objects and call the methods  
+class Test2{  
+public static void main(String args[]){  
+SBI s=new SBI();  
+ICICI i=new ICICI();  
+AXIS a=new AXIS();  
+System.out.println("SBI Rate of Interest: "+s.getRateOfInterest());  
+System.out.println("ICICI Rate of Interest: "+i.getRateOfInterest());  
+System.out.println("AXIS Rate of Interest: "+a.getRateOfInterest());  
+}  
+}  
+Test it Now
+Output:
+SBI Rate of Interest: 8
+ICICI Rate of Interest: 7
+AXIS Rate of Interest: 9
+Can we override static method?
+No, a static method cannot be overridden. It can be proved by runtime polymorphism, so we will learn it later.
+
+Why can we not override static method?
+It is because the static method is bound with class whereas instance method is bound with an object. Static belongs to the class area, and an instance belongs to the heap area.
+
+Can we override java main method?
+No, because the main is a static method.
+
+Difference between method Overloading and Method Overriding in java
+Click me for the difference between method overloading and overriding
+
+More topics on Method Overriding (Not For Beginners)
+Method Overriding with Access Modifier
+Let's see the concept of method overriding with access modifier.
+
+Exception Handling with Method Overriding
+Let's see the concept of method overriding with exception handling.
+
+Next TopicCovariant Return Type
+
+
+
+
+
+
+
+
+Covariant Return Type
+The covariant return type specifies that the return type may vary in the same direction as the subclass.
+
+Before Java5, it was not possible to override any method by changing the return type. But now, since Java5, it is possible to override method by changing the return type if subclass overrides any method whose return type is Non-Primitive but it changes its return type to subclass type. Let's take a simple example:
+
+Note: If you are beginner to java, skip this topic and return to it after OOPs concepts.
+Simple example of Covariant Return Type
+class A{  
+A get(){return this;}  
+}  
+  
+class B1 extends A{  
+B1 get(){return this;}  
+void message(){System.out.println("welcome to covariant return type");}  
+  
+public static void main(String args[]){  
+new B1().get().message();  
+}  
+}  
+Test it Now
+Output:welcome to covariant return type
+As you can see in the above example, the return type of the get() method of A class is A but the return type of the get() method of B class is B. Both methods have different return type but it is method overriding. This is known as covariant return type.
+
+How is Covariant return types implemented?
+Java doesn't allow the return type based overloading but JVM always allows return type based overloading. JVM uses full signature of a method for lookup/resolution. Full signature means it includes return type in addition to argument types. i.e., a class can have two or more methods differing only by return type. javac uses this fact to implement covariant return types.
+
+Next Topicsuper keyword in java
+
+
+
+
+
+
+
+//-------------------------------------------------------------------------------------------------
 
 
 
