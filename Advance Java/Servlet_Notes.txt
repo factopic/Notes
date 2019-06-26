@@ -1,0 +1,224 @@
+
+Do You Know?
+What is the web application and what is the difference between Get and Post request?
+What information is received by the web server if we request for a Servlet?
+How to run servlet in Eclipse, MyEclipse and Netbeans IDE?
+What are the ways for servlet collaboration and what is the difference between RequestDispatcher and sendRedirect() method?
+What is the difference between ServletConfig and ServletContext interface?
+How many ways can we maintain the state of a user? Which approach is mostly used in web development?
+How to count the total number of visitors and whole response time for a request using Filter?
+How to run servlet with annotation?
+How to create registration form using Servlet and Oracle database?
+How can we upload and download the file from the server?
+
+
+
+
+Servlets 
+
+Servlet technology is used to create a web application (resides at server side and generates a dynamic web page).
+
+Servlet technology is robust and scalable because of java language.
+Before Servlet, CGI (Common Gateway Interface) scripting language was common as a server-side programming language.
+However, there were many disadvantages to this technology. We have discussed these disadvantages below.
+
+There are many interfaces and classes in the Servlet API such as Servlet, GenericServlet, HttpServlet, ServletRequest, ServletResponse, etc.
+
+
+What is a Servlet?
+Servlet can be described in many ways, depending on the context.
+
+Servlet is a technology which is used to create a web application.
+Servlet is an API that provides many interfaces and classes including documentation.
+Servlet is an interface that must be implemented for creating any Servlet.
+Servlet is a class that extends the capabilities of the servers and responds to the incoming requests. It can respond to any requests.
+Servlet is a web component that is deployed on the server to create a dynamic web page.
+
+
+What is a web application?
+A web application is an application accessible from the web. A web application is composed of web components like Servlet, JSP, Filter, etc. 
+and other elements such as HTML, CSS, and JavaScript. The web components typically execute in Web Server and respond to the HTTP request.
+
+CGI (Common Gateway Interface)
+CGI technology enables the web server to call an external program and pass HTTP request information to the external program to process the request. 
+For each request, it starts a new process.
+
+
+
+There are many problems in CGI technology:
+
+If the number of clients increases, it takes more time for sending the response.
+For each request, it starts a process, and the web server is limited to start processes.
+It uses platform dependent language e.g. C, C++, perl.
+Advantages of Servlet
+Advantages of Servlet
+There are many advantages of Servlet over CGI. The web container creates threads for handling the multiple requests to the Servlet. Threads have many benefits over the Processes such as they share a common memory area, lightweight, cost of communication between the threads are low. The advantages of Servlet are as follows:
+
+Better performance: because it creates a thread for each request, not process.
+Portability: because it uses Java language.
+Robust: JVM manages Servlets, so we don't need to worry about the memory leak, garbage collection, etc.
+Secure: because it uses java language.
+
+
+
+
+
+
+
+
+
+Servlet API
+
+The javax.servlet and javax.servlet.http packages represent interfaces and classes for servlet api.
+
+The javax.servlet package contains many interfaces and classes that are used by the servlet or web container. These are not specific to any protocol.
+
+The javax.servlet.http package contains interfaces and classes that are responsible for http requests only.
+
+Let's see what are the interfaces of javax.servlet package.
+
+Interfaces in javax.servlet package
+There are many interfaces in javax.servlet package. They are as follows:
+
+Servlet
+ServletRequest
+ServletResponse
+RequestDispatcher
+ServletConfig
+ServletContext
+SingleThreadModel
+Filter
+FilterConfig
+FilterChain
+ServletRequestListener
+ServletRequestAttributeListener
+ServletContextListener
+ServletContextAttributeListener
+
+
+
+bullish inverted head and shoulder
+
+Classes in javax.servlet package
+There are many classes in javax.servlet package. They are as follows:
+
+GenericServlet
+ServletInputStream
+ServletOutputStream
+ServletRequestWrapper
+ServletResponseWrapper
+ServletRequestEvent
+ServletContextEvent
+ServletRequestAttributeEvent
+ServletContextAttributeEvent
+ServletException
+UnavailableException
+Interfaces in javax.servlet.http package
+There are many interfaces in javax.servlet.http package. They are as follows:
+
+HttpServletRequest
+HttpServletResponse
+HttpSession
+HttpSessionListener
+HttpSessionAttributeListener
+HttpSessionBindingListener
+HttpSessionActivationListener
+HttpSessionContext (deprecated now)
+Classes in javax.servlet.http package
+There are many classes in javax.servlet.http package. They are as follows:
+
+HttpServlet
+Cookie
+HttpServletRequestWrapper
+HttpServletResponseWrapper
+HttpSessionEvent
+HttpSessionBindingEvent
+HttpUtils (deprecated now)
+
+
+
+high death level
+high pledge level
+interest payment is equal to profite after tax or loss x 10
+
+
+ <!-- 
+ 	 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+	 	 <!-- Brand -->
+		<a class="navbar-brand" href="#">Factopic
+			<img src="F://Eclipse WorkSpace//Kaha Web//img//Goofy.jpg" alt="Logo" style="width:40px;">
+		</a>
+	
+		<!-- colpase button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+	 
+	 
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<!-- Links --> 
+			<ul class="navbar-nav">
+	    		<li class="nav-item">
+	      			<a class="nav-link" href="#"></a>
+	    		</li>
+	   		 	<li class="nav-item">
+	   			   <a class="nav-link" href="#"></a>
+	   			 </li>
+	    		<li class="nav-item">
+	 	  			<a class="nav-link" href="#"></a>
+			    </li>
+	  		</ul>
+		</div>
+	
+
+	</nav>
+ 
+ 
+
+	
+ -->	
+ 
+ ilfi effect
+ 
+ 
+ 
+ 
+ 
+ 
+ 					<!-- Project -->
+						<div class="container">
+							<div class="card">
+							<button class="btn btn-light" > Project </button>
+							<a class=" btn btn-info btn-block text-white" role="button" href="https://factopic.github.io/CryptoCurrencyTracker/">Crypto Currency Tracker</a>
+							<a class=" btn btn-info btn-block text-white"  href="https://github.com/factopic/Fun_Test/Personality.html">View Your 2day's Personality</a>
+							</div>						
+						</div>
+				<!-- End Project -->
+				
+				
+				
+				
+				
+				
+				
+				
+									<!-- Language Section -->
+					<div class="container-fluid">
+		
+							<p class=""><b><i class="fa fa-globe fa-fw  "></i>Languages</b></p>
+							<p>Java</p>
+          					<div class="progress">
+            					<div class="progress-bar" style="height:24px;width:80%"></div>
+          					</div>
+          					<p>Angular</p>
+         					<div class="progress">
+         						<div class="progress-bar" style="height:24px;width:60%"></div>
+        					</div>
+          					<p>Bootstrap</p>
+          					<div class="progress">
+          						<div class="progress-bar" style="height:24px;width:75%"></div>
+          					</div>
+          					
+					</div>
+					
+					<!-- End Language Section -->
