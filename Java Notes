@@ -4,12 +4,9 @@ Object-Oriented Programming
 Advantage of OOPs over Procedure-oriented programming language
 Difference between Object-oriented and Object-based programming language.
 
-In this page, we will learn about the basics of OOPs. 
-Object-Oriented Programming is a paradigm that provides many concepts such as inheritance, data binding, polymorphism, etc.
+
 
 The popular object-oriented languages are Java, C#, PHP, Python, C++, etc.
-
-The main aim of object-oriented programming is to implement real-world entities for example object, classes, abstraction, inheritance, polymorphism, etc.
 
 OOPs (Object-Oriented Programming System)
 Object means a real-world entity such as a pen, chair, table, computer, watch, etc. 
@@ -156,7 +153,6 @@ constants name		should be in uppercase letter. e.g. RED, YELLOW, MAX_PRIORITY et
 Objects and Classes in Java
 
 In object-oriented programming technique, we design a program using objects and classes.
-
 An object in Java is the physical as well as logical entity whereas a class in Java is a logical entity only.
 
 
