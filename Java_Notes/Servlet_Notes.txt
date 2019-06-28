@@ -61,10 +61,885 @@ Secure: because it uses java language.
 
 
 
+///--------------------------------------------------------------------------------------------------------------
+
+web terminology
+
+Servlet Terminology	Description
+Website: static vs dynamic	It is a collection of related web pages that may contain text, images, audio and video.
+HTTP	It is the data communication protocol used to establish communication between client and server.
+HTTP Requests	It is the request send by the computer to a web server that contains all sorts of potentially interesting information.
+Get vs Post	It gives the difference between GET and POST request.
+Container	It is used in java for dynamically generating the web pages on the server side.
+Server: Web vs Application	It is used to manage the network resources and for running the program or software that provides services.
+Content Type	It is HTTP header that provides the description about what are you sending to the browser.
+
+
+Website
+
+Website is a collection of related web pages that may contain text, images, audio and video. 
+The first page of a website is called home page. Each website has specific internet address (URL) that you need to enter in your browser to access a website.
+
+Website is hosted on one or more servers and can be accessed by visiting its homepage using a computer network. 
+A website is managed by its owner that can be an individual, company or an organization.
 
 
 
 
+
+A website can be of two types:
+
+
+Static Website
+Dynamic Website
+Static website
+Static website is the basic type of website that is easy to create. You don't need the knowledge of web programming and database design to create a static website. Its web pages are coded in HTML.
+
+The codes are fixed for each page so the information contained in the page does not change and it looks like a printed page.
+
+Servlet Website2
+Dynamic website
+Dynamic website is a collection of dynamic web pages whose content changes dynamically. It accesses content from a database or Content Management System (CMS). Therefore, when you alter or update the content of the database, the content of the website is also altered or updated.
+
+Dynamic website uses client-side scripting or server-side scripting, or both to generate dynamic content.
+
+Client side scripting generates content at the client computer on the basis of user input. The web browser downloads the web page from the server and processes the code within the page to render information to the user.
+
+In server side scripting, the software runs on the server and processing is completed in the server then plain pages are sent to the user.
+
+Servlet Website3
+Static vs Dynamic website
+Static Website	Dynamic Website
+Prebuilt content is same every time the page is loaded.	Content is generated quickly and changes regularly.
+It uses the HTML code for developing a website.	It uses the server side languages such as PHP,SERVLET, JSP, and ASP.NET etc. for developing a website.
+It sends exactly the same response for every request.	It may generate different HTML for each of the request.
+The content is only changed when someone publishes and updates the file (sends it to the web server).	The page contains "server-side" code which allows the server to generate the unique content when the page is loaded.
+Flexibility is the main advantage of static website.	Content Management System (CMS) is the main advantage of dynamic website.
+Next TopicHTTP (Hyper Text Transfer Protocol)
+
+
+
+
+
+
+
+
+
+
+
+HTTP (Hyper Text Transfer Protocol)
+The Hypertext Transfer Protocol (HTTP) is application-level protocol for collaborative, distributed, hypermedia information systems. It is the data communication protocol used to establish communication between client and server.
+
+HTTP is TCP/IP based communication protocol, which is used to deliver the data like image files, query results, HTML files etc on the World Wide Web (WWW) with the default port is TCP 80. It provides the standardized way for computers to communicate with each other.
+
+Servlet HTTP4
+The Basic Characteristics of HTTP (Hyper Text Transfer Protocol):
+
+
+It is the protocol that allows web servers and browsers to exchange data over the web.
+It is a request response protocol.
+It uses the reliable TCP connections by default on TCP port 80.
+It is stateless means each request is considered as the new request. In other words, server doesn't recognize the user by default.
+The Basic Features of HTTP (Hyper Text Transfer Protocol):
+
+There are three fundamental features that make the HTTP a simple and powerful protocol used for communication:
+
+HTTP is media independent: It specifies that any type of media content can be sent by HTTP as long as both the server and the client can handle the data content.
+HTTP is connectionless: It is a connectionless approach in which HTTP client i.e., a browser initiates the HTTP request and after the request is sent the client disconnects from server and waits for the response.
+HTTP is stateless: The client and server are aware of each other during a current request only. Afterwards, both of them forget each other. Due to the stateless nature of protocol, neither the client nor the server can retain the information about different request across the web pages.
+The Basic Architecture of HTTP (Hyper Text Transfer Protocol):
+
+The below diagram represents the basic architecture of web application and depicts where HTTP stands:
+
+Servlet HTTP5
+HTTP is request/response protocol which is based on client/server based architecture. In this protocol, web browser, search engines, etc. behave as HTTP clients and the Web server like Servlet behaves as a server
+
+Next TopicHTTP Requests
+
+
+← prev
+
+
+
+
+
+
+
+
+HTTP Requests
+The request sent by the computer to a web server, contains all sorts of potentially interesting information; it is known as HTTP requests.
+
+The HTTP client sends the request to the server in the form of request message which includes following information:
+
+The Request-line
+The analysis of source IP address, proxy and port
+The analysis of destination IP address, protocol, port and host
+The Requested URI (Uniform Resource Identifier)
+The Request method and Content
+The User-Agent header
+The Connection control header
+The Cache control header
+HTTP Requests
+The HTTP request method indicates the method to be performed on the resource identified by the Requested URI (Uniform Resource Identifier). This method is case-sensitive and should be used in uppercase.
+
+
+The HTTP request methods are:
+
+HTTP Request	Description
+GET	Asks to get the resource at the requested URL.
+POST	Asks the server to accept the body info attached. It is like GET request with extra info sent with the request.
+HEAD	Asks for only the header part of whatever a GET would return. Just like GET but with no body.
+TRACE	Asks for the loopback of the request message, for testing or troubleshooting.
+PUT	Says to put the enclosed info (the body) at the requested URL.
+DELETE	Says to delete the resource at the requested URL.
+OPTIONS	Asks for a list of the HTTP methods to which the thing at the request URL can respond
+Next TopicGet vs. Post
+
+
+← p
+
+
+
+
+
+
+
+
+
+next →← prev
+Get vs. Post
+There are many differences between the Get and Post request. Let's see these differences:
+
+GET	POST
+1) In case of Get request, only limited amount of data can be sent because data is sent in header.	In case of post request, large amount of data can be sent because data is sent in body.
+2) Get request is not secured because data is exposed in URL bar.	Post request is secured because data is not exposed in URL bar.
+3) Get request can be bookmarked.	Post request cannot be bookmarked.
+4) Get request is idempotent . It means second request will be ignored until response of first request is delivered	Post request is non-idempotent.
+5) Get request is more efficient and used more than Post.	Post request is less efficient and used less than get.
+
+Get vs. Post
+GET and POST
+Two common methods for the request-response between a server and client are:
+
+GET- It requests the data from a specified resource
+POST- It submits the processed data to a specified resource
+Anatomy of Get Request
+The query string (name/value pairs) is sent inside the URL of a GET request:
+
+
+GET/RegisterDao.jsp?name1=value1&name2=value2  
+As we know that data is sent in request header in case of get request. It is the default request type. Let's see what information is sent to the server.
+
+Servlet Request6
+Some other features of GET requests are:
+
+It remains in the browser history
+It can be bookmarked
+It can be cached
+It have length restrictions
+It should never be used when dealing with sensitive data
+It should only be used for retrieving the data
+Anatomy of Post Request
+The query string (name/value pairs) is sent in HTTP message body for a POST request:
+
+POST/RegisterDao.jsp HTTP/1.1  
+Host: www. javatpoint.com  
+name1=value1&name2=value2  
+As we know, in case of post request original data is sent in message body. Let's see how information is passed to the server in case of post request.
+
+Servlet Request7
+Some other features of POST requests are:
+
+This requests cannot be bookmarked
+This requests have no restrictions on length of data
+This requests are never cached
+This requests do not retain in the browser history
+
+
+
+Next TopicServlet Container
+
+
+
+
+
+
+
+
+Servlet Container
+It provides the runtime environment for JavaEE (j2ee) applications. The client/user can request only a static WebPages from the server. If the user wants to read the web pages as per input then the servlet container is used in java.
+
+The servlet container is the part of web server which can be run in a separate process. We can classify the servlet container states in three types:
+
+Servlet Container1
+Servlet Container States
+
+
+The servlet container is the part of web server which can be run in a separate process. We can classify the servlet container states in three types:
+
+Standalone: It is typical Java-based servers in which the servlet container and the web servers are the integral part of a single program. For example:- Tomcat running by itself
+In-process: It is separated from the web server, because a different program runs within the address space of the main server as a plug-in. For example:- Tomcat running inside the JBoss.
+Out-of-process: The web server and servlet container are different programs which are run in a different process. For performing the communications between them, web server uses the plug-in provided by the servlet container.
+The Servlet Container performs many operations that are given below:
+
+Life Cycle Management
+Multithreaded support
+Object Pooling
+Security etc.
+
+
+
+Next TopicServer: Web vs. Application
+
+
+
+
+
+
+
+next →← prev
+Server: Web vs. Application
+Server is a device or a computer program that accepts and responds to the request made by other program, known as client. It is used to manage the network resources and for running the program or software that provides services.
+
+There are two types of servers:
+
+Web Server
+Application Server
+Web Server
+
+
+Web server contains only web or servlet container. It can be used for servlet, jsp, struts, jsf etc. It can't be used for EJB.
+
+It is a computer where the web content can be stored. In general web server can be used to host the web sites but there also used some other web servers also such as FTP, email, storage, gaming etc.
+
+Examples of Web Servers are: Apache Tomcat and Resin.
+
+Web Server Working
+It can respond to the client request in either of the following two possible ways:
+
+Generating response by using the script and communicating with database.
+Sending file to the client associated with the requested URL.
+The block diagram representation of Web Server is shown below:
+
+Web Server1
+Important points
+
+If the requested web page at the client side is not found, then web server will sends the HTTP response: Error 404 Not found.
+When the web server searching the requested page if requested page is found then it will send to the client with an HTTP response.
+If the client requests some other resources then web server will contact to application server and data is store for constructing the HTTP response.
+Application Server
+
+Application server contains Web and EJB containers. It can be used for servlet, jsp, struts, jsf, ejb etc. It is a component based product that lies in the middle-tier of a server centric architecture.
+
+It provides the middleware services for state maintenance and security, along with persistence and data access. It is a type of server designed to install, operate and host associated services and applications for the IT services, end users and organizations.
+
+The block diagram representation of Application Server is shown below:
+
+Web Server2
+The Example of Application Servers are:
+
+JBoss: Open-source server from JBoss community.
+Glassfish: Provided by Sun Microsystem. Now acquired by Oracle.
+Weblogic: Provided by Oracle. It more secured.
+Websphere: Provided by IBM.
+
+
+
+
+
+
+
+Next TopicContent Type
+
+
+
+
+
+
+Content Type
+Content Type is also known as MIME (Multipurpose internet Mail Extension)Type. It is a HTTP header that provides the description about what are you sending to the browser.
+
+MIME is an internet standard that is used for extending the limited capabilities of email by allowing the insertion of sounds, images and text in a message.
+
+The features provided by MIME to the email services are as given below:
+
+
+It supports the non-ASCII characters
+It supports the multiple attachments in a single message
+It supports the attachment which contains executable audio, images and video files etc.
+It supports the unlimited message length.
+Content Type
+List of Content Types
+There are many content types. The commonly used content types are given below:
+
+text/html
+text/plain
+application/msword
+application/vnd.ms-excel
+application/jar
+application/pdf
+application/octet-stream
+application/x-zip
+images/jpeg
+images/png
+images/gif
+audio/mp3
+video/mp4
+video/quicktime etc.
+
+
+Next TopicServlet API
+
+
+
+
+
+Servlet API
+Servlet API
+Interfaces in javax.servlet package
+Classes in javax.servlet package
+Interfaces in javax.servlet.http package
+Classes in javax.servlet.http package
+The javax.servlet and javax.servlet.http packages represent interfaces and classes for servlet api.
+
+The javax.servlet package contains many interfaces and classes that are used by the servlet or web container. These are not specific to any protocol.
+
+The javax.servlet.http package contains interfaces and classes that are responsible for http requests only.
+
+
+Let's see what are the interfaces of javax.servlet package.
+
+Interfaces in javax.servlet package
+There are many interfaces in javax.servlet package. They are as follows:
+
+Servlet
+ServletRequest
+ServletResponse
+RequestDispatcher
+ServletConfig
+ServletContext
+SingleThreadModel
+Filter
+FilterConfig
+FilterChain
+ServletRequestListener
+ServletRequestAttributeListener
+ServletContextListener
+ServletContextAttributeListener
+
+ 
+Classes in javax.servlet package
+There are many classes in javax.servlet package. They are as follows:
+
+GenericServlet
+ServletInputStream
+ServletOutputStream
+ServletRequestWrapper
+ServletResponseWrapper
+ServletRequestEvent
+ServletContextEvent
+ServletRequestAttributeEvent
+ServletContextAttributeEvent
+ServletException
+UnavailableException
+Interfaces in javax.servlet.http package
+There are many interfaces in javax.servlet.http package. They are as follows:
+
+HttpServletRequest
+HttpServletResponse
+HttpSession
+HttpSessionListener
+HttpSessionAttributeListener
+HttpSessionBindingListener
+HttpSessionActivationListener
+HttpSessionContext (deprecated now)
+Classes in javax.servlet.http package
+There are many classes in javax.servlet.http package. They are as follows:
+
+HttpServlet
+Cookie
+HttpServletRequestWrapper
+HttpServletResponseWrapper
+HttpSessionEvent
+HttpSessionBindingEvent
+HttpUtils (deprecated now)
+
+
+Next TopicServlet Interface
+
+
+
+
+
+
+Servlet Interface
+Servlet Interface
+Methods of Servlet interface
+Servlet interface provides commonbehaviorto all the servlets.Servlet interface defines methods that all servlets must implement.
+
+Servlet interface needs to be implemented for creating any servlet (either directly or indirectly). It provides 3 life cycle methods that are used to initialize the servlet, to service the requests, and to destroy the servlet and 2 non-life cycle methods.
+
+Methods of Servlet interface
+There are 5 methods in Servlet interface. The init, service and destroy are the life cycle methods of servlet. These are invoked by the web container.
+
+
+Method	Description
+public void init(ServletConfig config)	initializes the servlet. It is the life cycle method of servlet and invoked by the web container only once.
+public void service(ServletRequest request,ServletResponse response)	provides response for the incoming request. It is invoked at each request by the web container.
+public void destroy()	is invoked only once and indicates that servlet is being destroyed.
+public ServletConfig getServletConfig()	returns the object of ServletConfig.
+public String getServletInfo()	returns information about servlet such as writer, copyright, version etc.
+
+ 
+Servlet Example by implementing Servlet interface
+Let's see the simple example of servlet by implementing the servlet interface.
+
+It will be better if you learn it after visiting steps to create a servlet.
+File: First.java
+import java.io.*;  
+import javax.servlet.*;  
+  
+public class First implements Servlet{  
+ServletConfig config=null;  
+  
+public void init(ServletConfig config){  
+this.config=config;  
+System.out.println("servlet is initialized");  
+}  
+  
+public void service(ServletRequest req,ServletResponse res)  
+throws IOException,ServletException{  
+  
+res.setContentType("text/html");  
+  
+PrintWriter out=res.getWriter();  
+out.print("<html><body>");  
+out.print("<b>hello simple servlet</b>");  
+out.print("</body></html>");  
+  
+}  
+public void destroy(){System.out.println("servlet is destroyed");}  
+public ServletConfig getServletConfig(){return config;}  
+public String getServletInfo(){return "copyright 2007-1010";}  
+  
+}  
+download example of servlet by implementing Servlet interface
+
+
+
+
+Next TopicGenericServlet Class
+
+
+
+
+
+
+
+next>> <<prev
+GenericServlet class
+GenericServlet class
+Methods of GenericServlet class
+Example of GenericServlet class
+GenericServlet class implements Servlet, ServletConfig and Serializable interfaces. It provides the implementation of all the methods of these interfaces except the service method.
+
+GenericServlet class can handle any type of request so it is protocol-independent.
+
+You may create a generic servlet by inheriting the GenericServlet class and providing the implementation of the service method.
+
+
+Methods of GenericServlet class
+There are many methods in GenericServlet class. They are as follows:
+
+public void init(ServletConfig config) is used to initialize the servlet.
+public abstract void service(ServletRequest request, ServletResponse response) provides service for the incoming request. It is invoked at each time when user requests for a servlet.
+public void destroy() is invoked only once throughout the life cycle and indicates that servlet is being destroyed.
+public ServletConfig getServletConfig() returns the object of ServletConfig.
+public String getServletInfo() returns information about servlet such as writer, copyright, version etc.
+public void init() it is a convenient method for the servlet programmers, now there is no need to call super.init(config)
+public ServletContext getServletContext() returns the object of ServletContext.
+public String getInitParameter(String name) returns the parameter value for the given parameter name.
+public Enumeration getInitParameterNames() returns all the parameters defined in the web.xml file.
+public String getServletName() returns the name of the servlet object.
+public void log(String msg) writes the given message in the servlet log file.
+public void log(String msg,Throwable t) writes the explanatory message in the servlet log file and a stack trace.
+
+ 
+Servlet Example by inheriting the GenericServlet class
+Let's see the simple example of servlet by inheriting the GenericServlet class.
+
+It will be better if you learn it after visiting steps to create a servlet.
+File: First.java
+import java.io.*;  
+import javax.servlet.*;  
+  
+public class First extends GenericServlet{  
+public void service(ServletRequest req,ServletResponse res)  
+throws IOException,ServletException{  
+  
+res.setContentType("text/html");  
+  
+PrintWriter out=res.getWriter();  
+out.print("<html><body>");  
+out.print("<b>hello generic servlet</b>");  
+out.print("</body></html>");  
+  
+}  
+}  
+download this example
+
+
+Next TopicHttpServlet Class
+
+
+
+
+
+
+next → ← prev
+HttpServlet class
+HttpServlet class
+Methods of HttpServlet class
+The HttpServlet class extends the GenericServlet class and implements Serializable interface. It provides http specific methods such as doGet, doPost, doHead, doTrace etc.
+Methods of HttpServlet class
+There are many methods in HttpServlet class. They are as follows:
+
+public void service(ServletRequest req,ServletResponse res) dispatches the request to the protected service method by converting the request and response object into http type.
+protected void service(HttpServletRequest req, HttpServletResponse res) receives the request from the service method, and dispatches the request to the doXXX() method depending on the incoming http request type.
+protected void doGet(HttpServletRequest req, HttpServletResponse res) handles the GET request. It is invoked by the web container.
+protected void doPost(HttpServletRequest req, HttpServletResponse res) handles the POST request. It is invoked by the web container.
+protected void doHead(HttpServletRequest req, HttpServletResponse res) handles the HEAD request. It is invoked by the web container.
+protected void doOptions(HttpServletRequest req, HttpServletResponse res) handles the OPTIONS request. It is invoked by the web container.
+protected void doPut(HttpServletRequest req, HttpServletResponse res) handles the PUT request. It is invoked by the web container.
+protected void doTrace(HttpServletRequest req, HttpServletResponse res) handles the TRACE request. It is invoked by the web container.
+protected void doDelete(HttpServletRequest req, HttpServletResponse res) handles the DELETE request. It is invoked by the web container.
+protected long getLastModified(HttpServletRequest req) returns the time when HttpServletRequest was last modified since midnight January 1, 1970 GMT.
+
+ 
+
+ 
+ 
+ Next TopicLife Cycle Of A Servlet
+
+ 
+ 
+ 
+ Life Cycle of a Servlet (Servlet Life Cycle)
+Life Cycle of a Servlet
+Servlet class is loaded
+Servlet instance is created
+init method is invoked
+service method is invoked
+destroy method is invoked
+The web container maintains the life cycle of a servlet instance. Let's see the life cycle of the servlet:
+
+Servlet class is loaded.
+Servlet instance is created.
+init method is invoked.
+service method is invoked.
+destroy method is invoked.
+Life cycle of a servlet
+As displayed in the above diagram, there are three states of a servlet: new, ready and end. The servlet is in new state if servlet instance is created. After invoking the init() method, Servlet comes in the ready state. In the ready state, servlet performs all the tasks. When the web container invokes the destroy() method, it shifts to the end state.
+
+
+ 
+1) Servlet class is loaded
+The classloader is responsible to load the servlet class. The servlet class is loaded when the first request for the servlet is received by the web container.
+
+
+2) Servlet instance is created
+The web container creates the instance of a servlet after loading the servlet class. The servlet instance is created only once in the servlet life cycle.
+
+3) init method is invoked
+The web container calls the init method only once after creating the servlet instance. The init method is used to initialize the servlet. It is the life cycle method of the javax.servlet.Servlet interface. Syntax of the init method is given below:
+public void init(ServletConfig config) throws ServletException  
+4) service method is invoked
+The web container calls the service method each time when request for the servlet is received. If servlet is not initialized, it follows the first three steps as described above then calls the service method. If servlet is initialized, it calls the service method. Notice that servlet is initialized only once. The syntax of the service method of the Servlet interface is given below:
+
+public void service(ServletRequest request, ServletResponse response)   
+  throws ServletException, IOException  
+5) destroy method is invoked
+The web container calls the destroy method before removing the servlet instance from the service. It gives the servlet an opportunity to clean up any resource for example memory, thread etc. The syntax of the destroy method of the Servlet interface is given below:
+
+public void destroy()  
+Next TopicSteps To Create A Servlet Using Tomcat Server
+
+
+
+
+
+
+
+
+
+next>> <<prev
+Steps to create a servlet example
+Steps to create the servlet using Tomcat server
+Create a directory structure
+Create a Servlet
+Compile the Servlet
+Create a deployment descriptor
+Start the server and deploy the application
+There are given 6 steps to create a servlet example. These steps are required for all the servers.
+
+The servlet example can be created by three ways:
+
+By implementing Servlet interface,
+By inheriting GenericServlet class, (or)
+By inheriting HttpServlet class
+The mostly used approach is by extending HttpServlet because it provides http request specific method such as doGet(), doPost(), doHead() etc.
+
+
+Here, we are going to use apache tomcat server in this example. The steps are as follows:
+
+Create a directory structure
+Create a Servlet
+Compile the Servlet
+Create a deployment descriptor
+Start the server and deploy the project
+Access the servlet
+download this example of servlet
+download example of servlet by extending GenericServlet
+download example of servlet by implementing Servlet interface
+
+ 
+1)Create a directory structures
+The directory structure defines that where to put the different types of files so that web container may get the information and respond to the client.
+
+The Sun Microsystem defines a unique standard to be followed by all the server vendors. Let's see the directory structure that must be followed to create the servlet.
+
+directory structure of servlet
+As you can see that the servlet class file must be in the classes folder. The web.xml file must be under the WEB-INF folder.
+
+2)Create a Servlet
+There are three ways to create the servlet.
+By implementing the Servlet interface
+By inheriting the GenericServlet class
+By inheriting the HttpServlet class
+The HttpServlet class is widely used to create the servlet because it provides methods to handle http requests such as doGet(), doPost, doHead() etc.
+In this example we are going to create a servlet that extends the HttpServlet class. In this example, we are inheriting the HttpServlet class and providing the implementation of the doGet() method. Notice that get request is the default request.
+
+DemoServlet.java
+import javax.servlet.http.*;  
+import javax.servlet.*;  
+import java.io.*;  
+public class DemoServlet extends HttpServlet{  
+public void doGet(HttpServletRequest req,HttpServletResponse res)  
+throws ServletException,IOException  
+{  
+res.setContentType("text/html");//setting the content type  
+PrintWriter pw=res.getWriter();//get the stream to write the data  
+  
+//writing html in the stream  
+pw.println("<html><body>");  
+pw.println("Welcome to servlet");  
+pw.println("</body></html>");  
+  
+pw.close();//closing the stream  
+}}  
+3)Compile the servlet
+For compiling the Servlet, jar file is required to be loaded. Different Servers provide different jar files:
+
+Jar file	Server
+1) servlet-api.jar	Apache Tomcat
+2) weblogic.jar	Weblogic
+3) javaee.jar	Glassfish
+4) javaee.jar	JBoss
+
+Two ways to load the jar file
+set classpath
+paste the jar file in JRE/lib/ext folder
+Put the java file in any folder. After compiling the java file, paste the class file of servlet in WEB-INF/classes directory.
+
+4)Create the deployment descriptor (web.xml file)
+The deployment descriptor is an xml file, from which Web Container gets the information about the servet to be invoked.
+
+The web container uses the Parser to get the information from the web.xml file. There are many xml parsers such as SAX, DOM and Pull.
+
+There are many elements in the web.xml file. Here is given some necessary elements to run the simple servlet program.
+
+
+web.xml file
+<web-app>  
+  
+<servlet>  
+<servlet-name>sonoojaiswal</servlet-name>  
+<servlet-class>DemoServlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>sonoojaiswal</servlet-name>  
+<url-pattern>/welcome</url-pattern>  
+</servlet-mapping>  
+  
+</web-app>  
+Description of the elements of web.xml file
+There are too many elements in the web.xml file. Here is the illustration of some elements that is used in the above web.xml file. The elements are as follows:
+
+
+<web-app> represents the whole application.
+<servlet> is sub element of <web-app> and represents the servlet.
+<servlet-name> is sub element of <servlet> represents the name of the servlet.
+<servlet-class> is sub element of <servlet> represents the class of the servlet.
+<servlet-mapping> is sub element of <web-app>. It is used to map the servlet.
+<url-pattern> is sub element of <servlet-mapping>. This pattern is used at client side to invoke the servlet.
+5)Start the Server and deploy the project
+To start Apache Tomcat server, double click on the startup.bat file under apache-tomcat/bin directory.
+
+One Time Configuration for Apache Tomcat Server
+You need to perform 2 tasks:
+
+set JAVA_HOME or JRE_HOME in environment variable (It is required to start server).
+Change the port number of tomcat (optional). It is required if another server is running on same port (8080).
+1) How to set JAVA_HOME in environment variable?
+To start Apache Tomcat server JAVA_HOME and JRE_HOME must be set in Environment variables.
+
+Go to My Computer properties -> Click on advanced tab then environment variables -> Click on the new tab of user variable -> Write JAVA_HOME in variable name and paste the path of jdk folder in variable value -> ok -> ok -> ok.
+
+Go to My Computer properties:
+
+configuring apache tomcat 1
+
+Click on advanced system settings tab then environment variables:
+
+configuring apache tomcat 2
+
+configuring apache tomcat 3
+
+Click on the new tab of user variable or system variable:
+
+configuring apache tomcat 4
+
+Write JAVA_HOME in variable name and paste the path of jdk folder in variable value:
+
+configuring apache tomcat 2
+
+There must not be semicolon (;) at the end of the path.
+
+After setting the JAVA_HOME double click on the startup.bat file in apache tomcat/bin.
+Note: There are two types of tomcat available:
+Apache tomcat that needs to extract only (no need to install)
+Apache tomcat that needs to install
+It is the example of apache tomcat that needs to extract only.
+how to start tomcat server for servlet program
+
+how to start tomcat server for servlet program
+
+Now server is started successfully.
+
+2) How to change port number of apache tomcat
+Changing the port number is required if there is another server running on the same system with same port number.Suppose you have installed oracle, you need to change the port number of apache tomcat because both have the default port number 8080.
+
+Open server.xml file in notepad. It is located inside the apache-tomcat/conf directory . Change the Connector port = 8080 and replace 8080 by any four digit number instead of 8080. Let us replace it by 9999 and save this file.
+
+5) How to deploy the servlet project
+Copy the project and paste it in the webapps folder under apache tomcat.
+
+how to deploy servlet in apache tomcat server
+
+But there are several ways to deploy the project. They are as follows:
+
+By copying the context(project) folder into the webapps directory
+By copying the war folder into the webapps directory
+By selecting the folder path from the server
+By selecting the war file from the server
+Here, we are using the first approach.
+
+You can also create war file, and paste it inside the webapps directory. To do so, you need to use jar tool to create the war file. Go inside the project directory (before the WEB-INF), then write:
+
+projectfolder> jar cvf myproject.war *  
+Creating war file has an advantage that moving the project from one location to another takes less time.
+
+6) How to access the servlet
+Open broser and write http://hostname:portno/contextroot/urlpatternofservlet. For example:
+
+http://localhost:9999/demo/welcome  
+output of servlet example
+
+download this example of servlet (using notepad)
+download example of servlet by extending GenericServlet
+download example of servlet by implementing Servlet interface
+Next TopicHow Servlet Works
+
+
+
+
+
+
+
+
+How Servlet works?
+It is important to learn how servlet works for understanding the servlet well. Here, we are going to get the internal detail about the first servlet program.
+
+The server checks if the servlet is requested for the first time.
+
+If yes, web container does the following tasks:
+
+
+loads the servlet class.
+instantiates the servlet class.
+calls the init method passing the ServletConfig object
+else
+
+calls the service method passing request and response objects
+The web container calls the destroy method when it needs to remove the servlet such as at time of stopping server or undeploying the project.
+
+
+ 
+How web container handles the servlet request?
+The web container is responsible to handle the request. Let's see how it handles the request.
+
+maps the request with the servlet in the web.xml file.
+creates request and response objects for this request
+calls the service method on the thread
+The public service method internally calls the protected service method
+The protected service method calls the doGet method depending on the type of request.
+The doGet method generates the response and it is passed to the client.
+After sending the response, the web container deletes the request and response objects. The thread is contained in the thread pool or deleted depends on the server implementation.
+What is written inside the public service method?
+The public service method converts the ServletRequest object into the HttpServletRequest type and ServletResponse object into the HttpServletResponse type. Then, calls the service method passing these objects. Let's see the internal code:
+
+public void service(ServletRequest req, ServletResponse res)  
+        throws ServletException, IOException  
+    {  
+        HttpServletRequest request;  
+        HttpServletResponse response;  
+        try  
+        {  
+            request = (HttpServletRequest)req;  
+            response = (HttpServletResponse)res;  
+        }  
+        catch(ClassCastException e)  
+        {  
+            throw new ServletException("non-HTTP request or response");  
+        }  
+        service(request, response);  
+    }  
+What is written inside the protected service method?
+The protected service method checks the type of request, if request type is get, it calls doGet method, if request type is post, it calls doPost method, so on. Let's see the internal code:
+
+protected void service(HttpServletRequest req, HttpServletResponse resp)  
+        throws ServletException, IOException  
+    {  
+        String method = req.getMethod();  
+        if(method.equals("GET"))  
+        {  
+            long lastModified = getLastModified(req);  
+            if(lastModified == -1L)  
+            {  
+                doGet(req, resp);  
+            }   
+    ....  
+    //rest of the code  
+        }  
+    }  
+Next TopicCreating Servlet In Myeclipse IDE
+
+
+
+
+
+//----------------------------------------------------------------------------------------------
 Servlet API
 
 The javax.servlet and javax.servlet.http packages represent interfaces and classes for servlet api.
@@ -94,6 +969,8 @@ ServletContextListener
 ServletContextAttributeListener
 
 
+
+bullish inverted head and shoulder
 
 Classes in javax.servlet package
 There are many classes in javax.servlet package. They are as follows:
@@ -130,3 +1007,12 @@ HttpServletResponseWrapper
 HttpSessionEvent
 HttpSessionBindingEvent
 HttpUtils (deprecated now)
+
+
+
+high death level
+high pledge level
+interest payment is equal to profite after tax or loss x 10
+
+
+ 
