@@ -16,3 +16,6 @@ Bitcoin is a cryptocurrency, a form of electronic cash. It is a decentralized di
 
 
 An exchange, or bourse also known as a trading exchange or trading venue, is an organized market where tradable securities, commodities, foreign exchange, futures, and options contracts are sold and bought.
+
+
+Java Server Pages (JSP) is a server-side programming technology that enables the creation of dynamic, platform-independent method for building Web-based applications. JSP have access to the entire family of Java APIs, including the JDBC API to access enterprise databases.
