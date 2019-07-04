@@ -1,0 +1,8 @@
+How to create form
+Right click on project 
+scroll down to Add then select Windows
+ forms. 
+Provide the file name then click Ok
+
+
+How to create create Database
