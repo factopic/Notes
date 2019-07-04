@@ -6,3 +6,6 @@ Provide the file name then click Ok
 
 
 How to create create Database
+Open database distribution in the views
+Right click on data base
+Select add connection
