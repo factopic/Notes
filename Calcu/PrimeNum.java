@@ -15,7 +15,7 @@ public class PrimeNum
 		{
 			if(n%i==0)
 			{
-				break;
+				break;			//Break exist loop
 			}
 			else 
 			{
