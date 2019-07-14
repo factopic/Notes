@@ -1,0 +1,65 @@
+
+ 
+
+ 
+Algorithm
+An algorithm is a procedure having well defined steps for solving a particular problem. Algorithm is finite set of logic or instructions, written in order for accomplish the certain predefined task. It is not the complete program or code, it is just a solution (logic) of a problem, which can be represented either as an informal description using a Flowchart or Pseudo code.
+
+The major categories of algorithms are given below:
+
+Sort: Algorithm developed for sorting the items in certain order.
+Search: Algorithm developed for searching the items inside a data structure.
+Delete: Algorithm developed for deleting the existing element from the data structure.
+Insert: Algorithm developed for inserting an item inside a data structure.
+Update: Algorithm developed for updating the existing element inside a data structure.
+The performance of algorithm is measured on the basis of following properties:
+
+
+Time complexity: It is a way of representing the amount of time needed by a program to run to the completion.
+Space complexity: It is the amount of memory space required by an algorithm, during a course of its execution. Space complexity is required in situations when limited memory is available and for the multi user system.
+Each algorithm must have:
+
+
+Specification: Description of the computational procedure.
+Pre-conditions: The condition(s) on input.
+Body of the Algorithm: A sequence of clear and unambiguous instructions.
+Post-conditions: The condition(s) on output.
+Example: Design an algorithm to multiply the two numbers x and y and display the result in z.
+
+
+Step 1 START
+Step 2 declare three integers x, y & z
+Step 3 define values of x & y
+Step 4 multiply values of x & y
+Step 5 store the output of step 4 in z
+Step 6 print z
+Step 7 STOP
+. Alternatively the algorithm can be written as ?
+
+Step 1 START MULTIPLY
+Step 2 get values of x & y
+Step 3 z← x * y
+Step 4 display z
+Step 5 STOP
+Characteristics of an Algorithm
+
+An algorithm must follow the mentioned below characteristics:
+
+Input: An algorithm must have 0 or well defined inputs.
+Output: An algorithm must have 1 or well defined outputs, and should match with the desired output.
+Feasibility: An algorithm must be terminated after the finite number of steps.
+Independent: An algorithm must have step-by-step directions which is independent of any programming code.
+Unambiguous: An algorithm must be unambiguous and clear. Each of their steps and input/outputs must be clear and lead to only one meaning.
+
+
+
+← prevnext →
+
+
+ 
+
+
+
+
+
+
