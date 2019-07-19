@@ -38,7 +38,7 @@ public class BinaryDecimal
 		int b = bintodec(a);
 		System.out.println("decimal value "+ b);
 		
-		System.out.println("Main Method Ended");
+		System.out.println("Main Method Ended");  // System.out.println("Main Method Ended");
 	}
 }
 
