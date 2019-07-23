@@ -34,4 +34,14 @@ public class Log4JCoreJavaSample   // Class
 			logger.fatal("This is fatal : " + parameter);
 		}
 	}
+	
+	/*
+	public void callMeInAppFatal(String parameter) {
+		if (logger.isDebugEnabled()) {
+			logger.fatal("This is fatal : " + parameter);
+		}
+	}
+	
+	*/
+	
 }
