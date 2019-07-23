@@ -2,7 +2,7 @@ package Logger;
 
 import org.apache.log4j.Logger;
 
-public class Log4JCoreJavaSample 
+public class Log4JCoreJavaSample   // Class
 {
 	final static Logger logger = Logger.getLogger(Log4JCoreJavaSample.class);
 	
