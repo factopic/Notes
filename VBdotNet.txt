@@ -34,3 +34,10 @@ truepart	Required. Value or expression returned if expr is True.
 falsepart	Required. Value or expression returned if expr is False.
 Remarks
 IIf always evaluates both truepart and falsepart, even though it returns only one of them. Because of this, you should watch for undesirable side effects. For example, if evaluating falsepart results in a division by zero error, an error occurs even if expr is True.
+
+
+
+Function CheckIt (TestMe As Integer)
+    CheckIt = IIf(TestMe > 1000, "Large", "Small")
+End Function
+
