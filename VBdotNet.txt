@@ -9,3 +9,28 @@ How to create create Database
 Open database distribution in the views
 Right click on data base
 Select add connection
+
+
+
+
+
+
+_----------------
+
+
+IIf function
+
+Returns one of two parts, depending on the evaluation of an expression.
+
+Syntax
+IIf(expr, truepart, falsepart)
+
+
+The IIf function syntax has these named arguments:
+
+Part	Description
+expr	Required. Expression that you want to evaluate.
+truepart	Required. Value or expression returned if expr is True.
+falsepart	Required. Value or expression returned if expr is False.
+Remarks
+IIf always evaluates both truepart and falsepart, even though it returns only one of them. Because of this, you should watch for undesirable side effects. For example, if evaluating falsepart results in a division by zero error, an error occurs even if expr is True.
