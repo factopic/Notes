@@ -50,5 +50,12 @@ public class Example1
 		System.out.println( "e2 value---------------"+ e2 );
 		System.out.println( "e==e2--------------------------------"+ e.equals(e2) );
 		System.out.println("Main Method ended");
+
+
+                Example1 e2 =  new Example1();
+		System.out.println( "e2 value---------------"+ e2 );
+		System.out.println( "e==e2--------------------------------"+ e.equals(e2) );
+		System.out.println("Main Method ended");
+	}
 	}
 }
