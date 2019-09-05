@@ -4,7 +4,7 @@ public class GuessOp01 implements Runnable
 {
 	public void run()
 	{
-		System.out.printf("%d", 3);
+		System.out.printf("%d", ೪);
 	}
 	
 	public static void main(String[] args) throws InterruptedException
