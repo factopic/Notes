@@ -196,7 +196,7 @@ OPTIONS	Asks for a list of the HTTP methods to which the thing at the request UR
 Next TopicGet vs. Post
 
 
-← p
+← 
 
 
 
