@@ -1,0 +1,97 @@
+package com.Ent.ProjectB;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class CityHacker {
+
+public static int threshold ;
+
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+System.out.println("Start");
+
+System.out.println("Enter the threshold of cities");
+int thresholdVar = sc.nextInt();
+
+System.out.println("Enter the Num of cities");
+int numCityVar = sc.nextInt();
+
+int[] originCitiesVar = new int[numCityVar/2];
+int[] destinationCitiesVar = new int[numCityVar/2];
+
+//------------------------------------------------------------------------------------
+System.out.println("Enter the originCities "+ originCitiesVar.length +" Num of cities");
+
+for(int i=0; i<numCityVar/2 ; i++)
+{
+originCitiesVar[i] = sc.nextInt();
+//System.out.println(originCitiesVar[i]);
+}
+
+
+
+System.out.println("Enter the destinationCities "+ destinationCitiesVar.length +" Num of cities");
+
+for(int i=0; i<numCityVar/2 ; i++)
+{
+destinationCitiesVar[i] = sc.nextInt();
+//System.out.println(destinationCitiesVar[i]);
+}
+
+
+
+
+
+int[] outVar = new int[numCityVar/2];
+
+
+
+
+for(int i=0; i<numCityVar/2 ; i++)
+{
+outVar[i] = gcd(originCitiesVar[i], destinationCitiesVar[i]);
+
+//System.out.println("GCD "+outVar[i] );
+}
+
+
+for(int i=0; i<outVar.length; i++)
+{
+if(outVar[i] > 2)
+outVar[i] = 1;
+else
+outVar[i] = 0;
+
+}
+
+for(int i=0; i<outVar.length; i++)
+{
+System.out.print(outVar[i]+" " );
+}
+
+
+}
+
+
+
+public static void map(int iOri , int jDes)
+{
+
+}
+
+public static int gcd(int ar , int br)
+{
+int gcdVar= 0;
+for(int i=1; i<=ar && i<=br; i++)
+{
+if(ar%i ==0 && br%i ==0 )
+{
+
+gcdVar = i;
+}
+}
+return gcdVar;
+}
+
+}
