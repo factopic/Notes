@@ -1,0 +1,72 @@
+How to Update a row using JSP
+
+
+ManageCategory.jsp
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="connfile.jsp" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+         <table>
+            <tr>
+                <td>Category ID</td>
+                <td>Category</td>
+                <td>Option</td>
+
+            </tr>
+            <%
+                rst = stmt.executeQuery("select * from category order by categoryid");
+                while(rst.next())
+                {
+                    out.println("<tr><td>"+ rst.getString(1)+ "</td><td>" + rst.getString(2)+ "</td><td> <a href='A_UpdateCategory.jsp?id="+ rst.getString(1) +"&name="+ rst.getString(2) +" '>Edit</a></td></tr>");
+                }
+                
+                %>
+        </table>
+    </body>
+</html>
+
+
+
+
+
+
+The users table look like this after run the index file.
+
+id	  first name	  last  name	  City 	    Email Id	                Action
+1	    Divyasundar	  Sahu	        Mumbai	  divyasundar@gmail.com	    Update
+2	    Hritika	      Sahu	        Pune	    hritika@gmail.com	        Update
+3	    Milan	        Jena	        Chennai	  milanjena@gmail.com	      Update
+
+
+
+
+
+UpdateCategory.jsp
+
+
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <form action="A_UpdateProcess.jsp">
+           Category <input name ="Cat" placeholder="Enter Category" value="<%= request.getParameter("name") %>">
+            <input type="submit" value="Update">
+        </form>
+    </body>
+</html>
+
+<%
+ session.setAttribute("Catid", request.getParameter("id"));
+%>
+
+
