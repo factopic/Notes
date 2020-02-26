@@ -70,3 +70,28 @@ UpdateCategory.jsp
 %>
 
 
+UpdateProcess.jsp
+
+
+
+
+<%
+    String s1 = (String)session.getAttribute("Catid");
+    String s2 = request.getParameter("Cat"); 
+  //  out.println(s1 + s2 + s3 + s4 + s5 + s6 + s7);
+    
+    String q1Var = "Update category set category = '"+ s2 +"' where Categoryid="+s1+"";
+
+        if(s1 !=null)
+        {
+            int i = stmt.executeUpdate(q1Var );
+            if(i>0){
+                response.sendRedirect("A_ManageCategory.jsp");
+            }
+            else
+            {
+                out.println("<h3>There is a problem in updating Record.</h3>");
+            }
+        }
+        
+    %>
