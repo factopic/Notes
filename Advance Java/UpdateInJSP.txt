@@ -99,3 +99,6 @@ UpdateProcess.jsp
     
     
     imp: passing data
+    
+    
+    DATE_FORMAT(COL1_ %d,%m,%y)
