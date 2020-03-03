@@ -1015,4 +1015,67 @@ high pledge level
 interest payment is equal to profite after tax or loss x 10
 
 
+
+
+
+
+
+
+
+
+
+
+
+<%-- 
+    Document   : S_Search
+    Created on : Feb 24, 2020, 7:43:23 PM
+    Author     : Dee
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="connfile.jsp" %>
+<%@include file="S_SideBar.jsp" %>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <link rel="stylesheet" href="exLink\CSS1.css">
+    </head>
+    <body>
+        <div style="margin-left:20%;padding:1px 16px;height:1000px;">
+        <form action="S_Search.jsp">
+            Search <input type="text" name="search" placeholder="Enter Receipt Number">
+            <input type="submit" value="Search">
+        </form>
+            
+        
+         <table>
+            <tr>
+                <td>Staff ID</td>
+                <td>Staff ID</td>
+                <td>Staff ID</td>
+                <td>Staff ID</td>
+            </tr>
+            <%
+                String s1 = request.getParameter("search");
+                if(s1!=null)
+                {
+                    rst = stmt.executeQuery("select * from receipt where receiptid='"+s1+"'order by receiptid");
+                    if(rst.next())
+                    {
+                        out.println("<tr><td>"+ rst.getString(1)+ "</td><td>" + rst.getString(2)+ "</td><td>" + rst.getString(3)+ "</td><td>" + rst.getString(4)+ "</td><td>" + rst.getString(5)+ "</td><td>" + rst.getString(6)+ "</td></tr>");
+                    }
+                }
+                    
+
+                
+                %>
+        </table>
+        </div>
+    </body>
+</html>
+
+
  
