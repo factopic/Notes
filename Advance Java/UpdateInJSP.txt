@@ -199,3 +199,26 @@ CREATE TABLE receipt(
     trip varchar(50),
     cost int
 );
+
+
+
+
+CREATE TABLE category(
+    categoryId int PRIMARY KEY AUTO_INCREMENT,
+    category varchar(50)
+    
+);
+
+CREATE TABLE pass(
+    passid int PRIMARY KEY AUTO_INCREMENT,
+   vehicle_category varchar(255),
+   vehicle_brand varchar(255),
+   vehicle_num varchar(255),
+   validity_from  date,
+   validity_to date,
+   name varchar(50),
+   dob date,
+   gender varchar(50),
+   address varchar(50),
+   cost varchar(50)
+);
