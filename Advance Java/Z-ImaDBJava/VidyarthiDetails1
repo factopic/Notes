@@ -15,3 +15,16 @@
         <title>JSP Page</title>
     </head>
     <body>
+
+<%
+                Thread.sleep(100);
+                ArrayList list = new ArrayList();
+		ServletContext context = getServletContext();
+                System.out.println("Hello====");
+                
+		String dirName =context.getRealPath("/classes");
+                System.out.println(dirName);
+		String paramname=null;
+                int id=0;
+		String t1=null,t2=null,t3=null,t4=null,t5=null,t6=null,t7=null,t8=null,t9=null,t10=null,t11=null,t12=null,t13=null,image=null;
+	
