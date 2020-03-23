@@ -68,3 +68,33 @@
 				}
 				
 			}
+			
+			
+			int f = 0;
+                        
+                        
+                        
+	Enumeration files = multi.getFileNames();	
+	while (files.hasMoreElements()) 
+	{
+		paramname = (String)files.nextElement();
+                System.out.println(paramname);
+		if(paramname.equals("t1"))
+		{
+			paramname = null;
+		}
+		
+		if(paramname != null)
+		{
+			f = 1;
+			image = multi.getFilesystemName(paramname);
+                        System.out.println(image);
+			String fPath = context.getRealPath("\\"+image);
+                        System.out.println(fPath);
+			file1 = new File(fPath);
+			FileInputStream fs = new FileInputStream(file1);
+			list.add(fs);
+		}		
+	}
+	        FileInputStream fs1 = null;
+         
