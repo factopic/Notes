@@ -98,3 +98,19 @@
 	}
 	        FileInputStream fs1 = null;
          
+
+                        PreparedStatement ps=con.prepareStatement("INSERT INTO person(Reg_no,Name,Father_name,Phone,image) values(?,?,?,?,?)");
+			    
+       			ps.setString(1,t1);
+       			ps.setString(2,t2);
+                        ps.setString(3,t3);
+			ps.setString(4,t4);
+			//ps.setString(5,t5);
+       			//ps.setString(6,t6);
+			//ps.setString(7,t7);
+                        //ps.setString(8,t8);
+			//ps.setString(9,t9);
+       			//ps.setString(10,t10);
+			//ps.setString(11,t11);
+			//ps.setString(12,t12);
+                        //ps.setString(13,t13);
