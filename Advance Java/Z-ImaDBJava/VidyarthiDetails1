@@ -114,3 +114,25 @@
 			//ps.setString(11,t11);
 			//ps.setString(12,t12);
                         //ps.setString(13,t13);
+			
+			
+			 if(f == 0)
+                            ps.setObject(5,null);
+                        else if(f == 1)
+                        {
+                            fs1 = (FileInputStream)list.get(0);
+                            ps.setBinaryStream(5,fs1,fs1.available());
+                        }	
+			int x=ps.executeUpdate();
+		
+			if(x!=0)
+			{
+				response.sendRedirect("VidyarthiDetails.jsp?message=success");
+			}
+			else
+			{
+				response.sendRedirect("VidyarthiDetails.jsp?message=fail");
+			}
+				
+		} 
+		catch (Exception e)
