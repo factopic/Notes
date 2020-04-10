@@ -1,1 +1,28 @@
-Java
+<%-- 
+    Document   : VidyarthiList
+    Created on : Jan 5, 2020, 8:37:10 PM
+    Author     : Dee
+--%>
+
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+  <%@ page import="java.util.Date" %>
+  <%@ page import="java.sql.*"%>
+  <%@include file="connect.jsp" %>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        
+        <style type="text/css">
+<!--
+.style5 {color: #76b9e4}
+.style9 {font-size: 20px}
+.style11 {font-size: 16px}
+.style12 {color: #2c83b0}
+.style13 {color: #a51f51}
+-->
+</style>
+    </head>
+    <body>
