@@ -26,3 +26,37 @@
 </style>
     </head>
     <body>
+<p>
+              
+              
+                <%@ page import="java.text.SimpleDateFormat" %>
+             
+                  <%      
+			  
+			                   
+								
+					try{
+								%>
+      </p>
+            <p>&nbsp;</p>
+            <table width="560" border="1" align="center"  cellpadding="5" cellspacing="5"   font-size:24px;">
+                      <tr>
+                        <td  width="106" valign="baseline" height="28" style="color: #2c83b0;"><div align="center" class="style15 style8 style11"> Image </div></td>
+			<td  width="136" valign="baseline" height="28" style="color: #2c83b0;"><div align="center" class="style15 style8 style11">Reg_no</div></td>
+                        <td  width="110" valign="baseline" height="28" style="color: #2c83b0;"><div align="center" class="style15 style8 style11">name </div></td>
+                        <td  width="110" valign="baseline" height="28" style="color: #2c83b0;"><div align="center" class="style15 style8 style11">Father_name</div></td>
+                        <td  width="110" valign="baseline" height="28" style="color: #2c83b0;"><div align="center" class="style15 style8 style11">phone No</div></td>
+                       
+                </tr>
+                      <%
+					  String s1="",s2,s3,s4,s5,s6,s7,s8,s9;
+                                          String s10,s11,s12,s13,s14;
+                                          String name1= request.getParameter("name");
+                                          Statement stm=con.createStatement();
+                                          String str= "select Reg_no, name, Father_name,phone,image from person ";
+                      			  ResultSet rs = stm.executeQuery(str);
+                                          String img=null;
+                                          while(rs.next())
+                			{
+								
+				
