@@ -110,3 +110,24 @@
                             <div align="center" class="style16 ">
                             <%out.println(s4);%>
                             </div></td>
+			    
+			    
+			    					
+                    </tr>
+                        <%
+						}
+					
+                                                                                               				
+				
+						con.close();
+                                                				}
+					catch(Exception e)
+					{
+						out.println(e.getMessage());
+					}
+					%>
+                     
+            </table>
+            
+    </body>
+</html>
