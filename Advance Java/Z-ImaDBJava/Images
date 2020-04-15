@@ -1,0 +1,28 @@
+
+
+
+
+<%@ page import="java.sql.*"%>
+
+<%@ page import="java.io.*"%>
+
+<% Blob image = null;
+
+Connection con = null;
+
+byte[ ] imgData = null ;
+
+Statement stmt = null;
+
+ResultSet rs = null;
+String pho=request.getParameter("phone");
+
+try {
+
+Class.forName("com.mysql.jdbc.Driver");
+
+con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo","root","root");
+
+stmt = con.createStatement();
+
+rs = stmt.executeQuery("select image from person where Reg_no= '"+pho+"'");
