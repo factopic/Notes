@@ -1,0 +1,197 @@
+package Challenge;
+
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+
+
+class StuArray
+{
+	int N;
+	int m;
+	String c;
+	
+	public StuArray(int N, int m , String c)
+	{
+		this.N = N;
+		this.m = m;
+		this.c = c;
+	}
+}
+
+
+public class CyclicShifts {
+	static Scanner sc = new Scanner(System.in);
+	
+	
+
+	public static void main(String[] args) {
+		
+		System.out.println("Main Starts");
+		int N, m;
+		String c;
+		
+		System.out.println("Enter T Test Cases");
+		int t = sc.nextInt();
+		
+		//String arr[][] = new String[t][3];
+		
+
+		
+		
+		
+		for(int j=0; j<t; j++)
+		{
+			System.out.println("Enter N m c");
+			for(int i=0; i<3; i++)
+			{
+				N = sc.nextInt();
+				m = sc.nextInt();
+				c = sc.nextLine();
+				StuArray s = new StuArray(N, m, c);
+			}
+			
+			al.add(bl);
+		}
+
+
+		//display2Arr(al);
+		
+	
+		
+		for(int i=0; i<al.size(); i++)
+		{
+			
+			
+			int N = al.get(i).get(0);
+			int m  = al.get(i).get(1);
+			int  c =al.get(i).get(2) ;
+			
+			for(int j=0; j<al.get(i).size() ; j++)
+			{
+				
+				System.out.println(al.get(i).get(j) );
+				
+				
+			}
+			
+		}
+
+		
+		
+
+		/*
+		int N = Integer.parseInt(arr[0][0]);
+		int c = Integer.parseInt(arr[0][2]);
+		String m = arr[0][1].trim();
+		System.out.println(m);
+		int arr1[] = binaryConvertion(N);
+		
+		displayArr(arr1);
+		*/
+		//if(arr[2])
+		System.out.println("Main Ends");
+		
+	}
+	
+	
+	
+		
+	
+	
+	
+	public static int[] binaryConvertion(int n)
+	{
+		int arr[] = new int[16];
+		int a = 0;
+		String x ="";
+			
+			for(int i=arr.length-1; i>=0; i--)
+			{
+				while(n>0)
+				{
+					a = n%2;
+					x = a + "" + x;
+					//System.out.println("Binary number:"+x + " for "+ n);
+					arr[i] = a;
+					n = n/2;
+					i--;
+				}
+			}
+
+		//displayArr(arr);
+
+		return arr;
+	}
+	
+	
+	
+	public static int[] rightShift(int[] arr, int pos)
+	{
+		
+		for(int i=0; i<pos; i++)
+		{
+			int last = 0 ;
+			last = arr[arr.length-1];
+			
+			for(int j=arr.length-1; j>=0 ; j--)
+			{
+				arr[j] = arr[j-1];
+			}
+			arr[0] = last;
+			
+		}
+
+		return null;
+	}
+	
+	
+	
+	public static int[] leftShift(int[] arr, int pos)
+	{
+		int first = 0;
+		for(int i=0; i<pos; i++)
+		{
+			first = arr[0];
+			for(int j=0 ; j<arr.length-1 ; j++)
+			{
+				arr[j] = arr[j+1];
+			}
+
+			arr[arr.length-1] = first;
+		}
+		return null;
+	}
+	
+	
+	
+	
+	static void displayArr(int[] arr)
+	{
+		for(int i=0 ; i<arr.length-1 ; i++)
+		{
+			System.out.print(arr[i]);
+		}
+		
+	}
+	
+	
+	static void display2Arr(ArrayList<ArrayList<Integer> > al)
+	{
+		for(int i=0; i<al.size(); i++)
+		{
+			
+			for(int j=0; j<al.get(i).size() ; j++)
+			{
+				System.out.println(al);
+			}
+			
+		}
+	}
+
+	
+	
+	
+}
