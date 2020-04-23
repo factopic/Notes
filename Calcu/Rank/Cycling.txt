@@ -1,0 +1,136 @@
+package Challenge;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class CyclicShifts {
+	static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+		System.out.println("Main Starts");
+		
+		
+		System.out.println("Enter T Test Cases");
+		int t = sc.nextInt();
+		
+		int arr[][] = new int[t][3];
+		
+		//ArrayList al = new ArrayList();
+		
+		
+		for(int i=0; i<t; i++)
+		{
+			System.out.println("Enter N m c");
+			for(int j=0; j<=2; j++)
+			{
+				arr[i][j] = sc.nextInt();
+			}
+		}
+		
+/*
+
+		for(int i=0; i<t; i++)
+		{
+			for(int j=0; j<=2; j++)
+			{
+				System.out.print(arr[i][j]);
+			}
+		}
+			
+		System.out.println("Main Ends");
+		
+		*/
+		
+		int arr1[] = binaryConvertion(arr[0][0]);
+		//displayArr(arr1);
+		
+		
+		if()
+		
+		
+	}
+	
+	
+	
+		
+	
+	
+	
+	public static int[] binaryConvertion(int n)
+	{
+		int arr[] = new int[16];
+		int a = 0;
+		String x ="";
+			
+			for(int i=arr.length-1; i>=0; i--)
+			{
+				while(n>0)
+				{
+					a = n%2;
+					x = a + "" + x;
+					//System.out.println("Binary number:"+x + " for "+ n);
+					arr[i] = a;
+					n = n/2;
+					i--;
+				}
+			}
+
+		//displayArr(arr);
+
+		return arr;
+	}
+	
+	
+	
+	public static int[] rightShift(int[] arr, int pos)
+	{
+		
+		for(int i=0; i<pos; i++)
+		{
+			int last = 0 ;
+			last = arr[arr.length-1];
+			
+			for(int j=arr.length-1; j>=0 ; j--)
+			{
+				arr[j] = arr[j-1];
+			}
+			arr[0] = last;
+			
+		}
+
+		return null;
+	}
+	
+	
+	
+	public static int[] leftShift(int[] arr, int pos)
+	{
+		int first = 0;
+		for(int i=0; i<pos; i++)
+		{
+			first = arr[0];
+			for(int j=0 ; j<arr.length-1 ; j++)
+			{
+				arr[j] = arr[j+1];
+			}
+
+			arr[arr.length-1] = first;
+		}
+		return null;
+	}
+	
+	
+	
+	
+	static void displayArr(int[] arr)
+	{
+		for(int i=0 ; i<arr.length-1 ; i++)
+		{
+			System.out.print(arr[i]);
+		}
+		
+	}
+	
+
+}
