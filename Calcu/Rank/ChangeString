@@ -1,0 +1,147 @@
+
+import java.util.Scanner;
+
+public class ChangeInString {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//System.out.println("Enter Test Cases");
+		int t, size;
+		String str[] ;
+		
+		t = sc.nextInt();
+		for(int i=0; i<t; i++)
+		{
+			//System.out.println("Enter the Num of Character");
+			size = sc.nextInt();
+			str = new String[size];						// Reading Input size
+			
+			String st = sc.next().toUpperCase();		// Reading Input String
+			//System.out.println(st);
+
+			char[] ch = st.toCharArray();
+			
+			
+			
+			
+			
+			//System.out.println( size == ch.length );
+			//************************************************************************************
+			if(size == ch.length)
+			{
+				if(ch.length <= 1)
+				{
+					System.out.println(0);
+				}
+				else if (ch.length == 2) {
+					
+					System.out.println( lenTwo(ch) );
+				}
+				else {
+					
+					//System.out.println( findA(ch) );
+					if(ch[0] == 'B'  && prob(ch))
+					{
+						//System.out.println(prob(ch));
+						System.out.println(  findB(ch, findA(ch))*2  );
+					}
+					else{
+						System.out.println(  findB(ch, findA(ch))  );
+					}
+						
+					
+					
+				}
+				
+			}
+			//displayArr(str);
+			
+		}
+		
+		
+	}
+	
+	
+	
+	public static boolean prob(char[] arr)
+	{
+		boolean b = false;
+		int count = 0;
+		
+		
+		if(  arr.length % 2 == 0)
+		{
+			int z = (arr.length/2);
+			
+			//System.out.println(z);
+			for(int i=0; i<arr.length/2 ; i++)
+			{
+				if(arr[i] == arr[z])
+				{
+					count++;
+				}
+
+				
+				z++;
+			}
+			
+			
+			
+			
+			if(count == arr.length/2 )
+				b = true;
+			else
+				b= false;
+			
+			
+		}
+		
+		
+
+		
+		
+		return b;
+	}
+	
+	
+	
+	
+	
+	
+	public static int lenTwo(char[] arr)
+	{
+		int i = 0;
+		if(arr[0] == 'A')
+			i = 0;
+		else
+			i=1;
+		
+		
+		
+		return i;
+	}
+	
+	
+	public static int findA(char[] arr)
+	{
+		int j = 0;
+		for(int i=0; i<arr.length; i++)
+		{
+			if(arr[i] == 'A')
+			{
+				j++;
+			}
+		}
+		
+		return j;
+	}
+	
+	
+	
+	
+
+	
+
+	
+
+}
