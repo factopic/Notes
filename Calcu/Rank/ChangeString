@@ -138,6 +138,22 @@ public class ChangeInString {
 	
 	
 	
+		public static int findB(char[] arr, int len)
+	{
+		int j = 0;
+		
+		for(int i=0; i<len; i++)
+		{
+			if(arr[i] == 'B')
+			{
+				
+				j++;
+			}
+		}
+		
+		return j;
+	}
+	
 	
 
 	
