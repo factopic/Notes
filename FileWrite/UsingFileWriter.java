@@ -17,5 +17,6 @@ public class UsingFileWriter {
 						
 		fw.write(str);
 		fw.close();
+                fw.close();
 	}
 }
