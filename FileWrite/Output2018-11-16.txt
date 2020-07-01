@@ -5,8 +5,9 @@ class Student
 
 public static void main ( String[] args )
 {
-
-
+System.out.println("Enter the test cases");
+Scanner sc =  new Scanner(System.in);
+Int o = sc.nextInt();
 
 }
 
