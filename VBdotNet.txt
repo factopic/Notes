@@ -41,3 +41,4 @@ Function CheckIt (TestMe As Integer)
     CheckIt = IIf(TestMe > 1000, "Large", "Small")
 End Function
 
+Returns true  or false based on the parameter
