@@ -37,28 +37,3 @@ IIf always evaluates both truepart and falsepart, even though it returns only on
 
 
 
-Function CheckIt (TestMe As Integer)
-    CheckIt = IIf(TestMe > 1000, "Large", "Small")
-End Function
-
-Returns true  or false based on the parameter
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-template-favorite-color',
-  template: `
-    Favorite Color: <input type="text" [(ngModel)]="favoriteColor">
-  `
-})
-export class FavoriteColorComponent {
-  favoriteColor = '';
-}
-it('should update the value of the input field', () => {
-  const input = fixture.nativeElement.querySelector('input');
-  const event = createNewEvent('input');
-
-  input.value = 'Red';
-  input.dispatchEvent(event);
-
-  expect(fixture.componentInstance.favoriteColorControl.value).toEqual('Red');
-});
