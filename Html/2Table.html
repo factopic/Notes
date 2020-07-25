@@ -11,54 +11,62 @@
 
 
   <style>
-    img {
-      border: 1px dotted black;
-      border-radius: 50%;
+    #form {
+      border: 1px dashed black;
+      border-radius: 5%;
+      padding: 15px;
+    }
+
+    .t1 {
+      background-color: black;
+      height: 350px;
+    }
+
+    #orm {
+      border-radius: 15px;
+      color: black;
+      margin-top: 35px;
+      padding: 15px;
+      background-color: #BEBEC5;
+    }
+
+    .note {
+      padding: 50px;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="jumbotron text-center">
+  <div class="note text-center">
     <h1>My First Bootstrap Page</h1>
     <p>Resize this responsive page to see the effect!</p>
   </div>
 
-  <div class="container">
+  <div class="container-fluid t1">
     <div class="row">
-      <div class="col-sm-4">
-        <h3>Column 1</h3>
-        <img src="E:\Letv\LeTV\What up\pic\IMG-20170904-WA0009.jpg" width="360" height="290">
+      <div class="col-sm-6">
       </div>
-      <div class="col-sm-4">
-        <h3>Column 2</h3>
-        <img src="E:\Letv\LeTV\What up\pic\IMG-20180729-WA0012.jpg" width="360" height="290">
-      </div>
-      <div class="col-sm-4">
-        <h3>Column 3</h3>
-        <img src="E:\Letv\LeTV\What up\pic\IMG-20170904-WA0011.jpg" width="360" height="290">
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4">
-        <h3>Column 1</h3>
-        <img src=" E:\Letv\LeTV\What up\pic\IMG-20170904-WA0009.jpg " width="360 " height="290 ">
-    </div>
-    <div class="col-lg-4">
-        <h3>Column 1</h3>
-        <img src="E:\Letv\LeTV\What up\pic\IMG-20170904-WA0009.jpg" width="360" height="290">
-      </div>
-      <div class="col-lg-4">
-          <h3>Column 1</h3>
-      <img src=" E:\Letv\LeTV\What up\pic\IMG-20170904-WA0009.jpg " width="360 " height="290 ">
+      <div class="col-sm-5" id="orm">
+        <form action="/action.jsp" autocomplete="off">
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" class="form-control" name="email">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" name="pwd">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <div class="text-center">
+          <a href="#">New User ?</a>
         </div>
+      </div>
+    </div>
   </div>
 
-</div>
 
 </body>
+
 </html>
