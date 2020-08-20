@@ -39,6 +39,21 @@ What is a web application?
 A web application is an application accessible from the web. A web application is composed of web components like Servlet, JSP, Filter, etc. 
 and other elements such as HTML, CSS, and JavaScript. The web components typically execute in Web Server and respond to the HTTP request.
 
+
+
+
+What is a web application?
+A web application is an application accessible from the web. A web application is composed of web components like Servlet, JSP, Filter, etc. 
+and other elements such as HTML, CSS, and JavaScript. The web components typically execute in Web Server and respond to the HTTP request.
+
+
+
+
+
+
+
+
+
 CGI (Common Gateway Interface)
 CGI technology enables the web server to call an external program and pass HTTP request information to the external program to process the request. 
 For each request, it starts a new process.
