@@ -28,6 +28,16 @@ There are many interfaces and classes in the Servlet API such as Servlet, Generi
 What is a Servlet?
 Servlet can be described in many ways, depending on the context.
 
+
+What is a Servlet?
+Servlet can be described in many ways, depending on the context.
+
+
+
+
+
+
+
 Servlet is a technology which is used to create a web application.
 Servlet is an API that provides many interfaces and classes including documentation.
 Servlet is an interface that must be implemented for creating any Servlet.
