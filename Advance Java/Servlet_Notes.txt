@@ -1035,9 +1035,6 @@ HttpUtils (deprecated now)
 
 
 
-high death level
-high pledge level
-interest payment is equal to profite after tax or loss x 10
 
 
  
